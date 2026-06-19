@@ -1,8 +1,28 @@
 [gd_scene format=3 uid="uid://cr1k8oodxgsnm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_egera"]
+[ext_resource type="Texture2D" uid="uid://dwmcrvu16ci3p" path="res://Assets/Sprites/guntherStatic.png" id="1_6cd4h"]
+[ext_resource type="Script" uid="uid://dyfs1hwdfsjqi" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
 
-[node name="Player" type="CharacterBody2D" unique_id=2121940922]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dd06"]
+atlas = ExtResource("1_6cd4h")
+region = Rect2(0, 0, 32, 32)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1263766748]
-shape = SubResource("RectangleShape2D_egera")
+[sub_resource type="SpriteFrames" id="SpriteFrames_38rej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dd06")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=2103491096]
+script = ExtResource("1_7dd06")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2096437787]
+sprite_frames = SubResource("SpriteFrames_38rej")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1687368870]
+polygon = PackedVector2Array(-14, 12, -14, -7, 14, -7, 14, -2, -7, -2, -7, 13, -13, 13)
