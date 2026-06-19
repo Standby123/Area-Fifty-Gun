@@ -3,3 +3,4 @@
 [node name="Game" type="Node2D" unique_id=243905275]
 
 [node name="seanisastinkyhead" type="Node2D" parent="." unique_id=283041095]
+position = Vector2(-12, 16)
