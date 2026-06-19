@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmhpnvyw3v7uw"
-path="res://.godot/imported/shottoStatic.png-f2e17c82baf7da2d772b676cfb745a76.ctex"
+uid="uid://dwmcrvu16ci3p"
+path="res://.godot/imported/guntherStatic.png-c334510d51f363bf910fc4fe3e5a87e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Ase_and_unfinished/shottoStatic.png"
-dest_files=["res://.godot/imported/shottoStatic.png-f2e17c82baf7da2d772b676cfb745a76.ctex"]
+source_file="res://Assets/Sprites/guntherStatic.png"
+dest_files=["res://.godot/imported/guntherStatic.png-c334510d51f363bf910fc4fe3e5a87e3.ctex"]
 
 [params]
 
