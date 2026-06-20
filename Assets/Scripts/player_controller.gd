@@ -10,11 +10,16 @@ var recoil : int = 20
 
 func _physics_ready():
 	pass
+	
 
 func _physics_process(delta: float) -> void:
 	
 	angular_damp = 2
-
+	print(angular_velocity)
+	
+	if abs(angular_velocity) > 10:
+		angular_velocity *= 0.9
+	
 	if Input.is_action_pressed("Rotate Left"):
 		angular_velocity -= 5
 		
@@ -22,8 +27,6 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("Shoot"):
 		linear_velocity = Vector2(0,0)
-		print("setting linear velocity to zero")
-		print(angular_velocity, angular_damp)	
 		var pos = muzzle.transform[2] # Get Muzzle Position
 		var dir = -1* Vector2(transform.x.x, transform.x.y) # Get direction to shoot
 		
