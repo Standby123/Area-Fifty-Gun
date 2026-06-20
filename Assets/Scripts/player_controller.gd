@@ -21,6 +21,8 @@ func _physics_process(delta: float) -> void:
 		angular_velocity = 8
 		
 	if Input.is_action_just_pressed("Shoot"):
+		linear_velocity = Vector2(0,0)
+		print("setting linear velocity to zero")
 		print(angular_velocity, angular_damp)	
 		var pos = muzzle.transform[2] # Get Muzzle Position
 		var dir = -1* Vector2(transform.x.x, transform.x.y) # Get direction to shoot
