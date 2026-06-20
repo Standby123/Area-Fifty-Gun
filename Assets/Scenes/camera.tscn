@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://qpymsjm585gk"]
+
+[ext_resource type="Script" uid="uid://crbjbnd3xo1oe" path="res://Assets/Scripts/camera_shake.gd" id="1_djjcv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_e2hj7"]
+noise_type = 3
+
+[node name="Camera" type="Camera2D" unique_id=1696142273]
+ignore_rotation = false
+zoom = Vector2(1.8, 1.8)
+script = ExtResource("1_djjcv")
+decay = 0.5
+max_roll = 0.2
+noise = SubResource("FastNoiseLite_e2hj7")
