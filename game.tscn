@@ -209,9 +209,11 @@ texture = ExtResource("2_feb5d")
 [sub_resource type="TileSet" id="TileSet_eow3j"]
 sources/0 = SubResource("TileSetAtlasSource_ryrav")
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fc0e3"]
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fc0e3"]
 
-[node name="Level 1" type="Node2D" unique_id=1904640624]
+[node name="Main" type="Node2D" unique_id=1904640624]
 script = ExtResource("1_fc0e3")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=2102499172]
@@ -223,6 +225,7 @@ tile_set = SubResource("TileSet_eow3j")
 
 [node name="Player" parent="." unique_id=2103491096 instance=ExtResource("4_7jktm")]
 position = Vector2(-9, -28)
+physics_material_override = SubResource("PhysicsMaterial_fc0e3")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=724035318]
 zoom = Vector2(5, 5)

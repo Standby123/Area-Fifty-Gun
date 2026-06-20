@@ -19,6 +19,7 @@ animations = [{
 }]
 
 [node name="Player" type="RigidBody2D" unique_id=2103491096]
+mass = 0.1
 script = ExtResource("1_7dd06")
 
 [node name="Collider" type="CollisionPolygon2D" parent="." unique_id=1687368870]
@@ -29,3 +30,4 @@ sprite_frames = SubResource("SpriteFrames_38rej")
 
 [node name="Muzzle" type="Node2D" parent="." unique_id=1470374978]
 position = Vector2(14, -5)
+rotation = 0.5235988

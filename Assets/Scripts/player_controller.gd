@@ -8,6 +8,11 @@ var knockback_force : int = 1
 
 @onready var muzzle: Node2D = $Muzzle
 
-func impulse():
-	muzzle.get_angle_to(Vector2i.RIGHT)
-	#collider.Apply_impulse()
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("Shoot"):
+		var x_dir = muzzle.transform[0]
+		var y_dir = muzzle.transform[1]
+		var pos = muzzle.transform[2]
+		
+		print(pos)
+		apply_impulse(Vector2i.UP * 10, pos)
