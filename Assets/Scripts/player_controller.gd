@@ -15,15 +15,15 @@ func _physics_ready():
 func _physics_process(delta: float) -> void:
 	
 	angular_damp = 2
-	print(angular_velocity)
 	
 	if abs(angular_velocity) > 10:
 		angular_velocity *= 0.9
 	
 	if Input.is_action_pressed("Rotate Left"):
-		angular_velocity -= 5
-		
 		angular_velocity = 8
+		
+	if Input.is_action_pressed("Rotate Right"):
+		angular_velocity = -8
 		
 	if Input.is_action_just_pressed("Shoot"):
 		linear_velocity = Vector2(0,0)
