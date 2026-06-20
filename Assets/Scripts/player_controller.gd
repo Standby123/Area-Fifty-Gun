@@ -20,10 +20,10 @@ func _physics_process(delta: float) -> void:
 		angular_velocity *= 0.9
 	
 	if Input.is_action_pressed("Rotate Left"):
-		angular_velocity = 8
+		angular_velocity = -8
 		
 	if Input.is_action_pressed("Rotate Right"):
-		angular_velocity = -8
+		angular_velocity = 8
 		
 	if Input.is_action_just_pressed("Shoot"):
 		linear_velocity = Vector2(0,0)

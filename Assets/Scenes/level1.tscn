@@ -127,6 +127,7 @@ tile_set = SubResource("TileSet_arc0y")
 
 [node name="Player" parent="." unique_id=2103491096 instance=ExtResource("2_5m5in")]
 position = Vector2(184, 30)
+gravity_scale = 0.7
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1644337180]
 zoom = Vector2(1.8, 1.8)
