@@ -32,6 +32,3 @@ func _physics_process(delta: float) -> void:
 		
 		# Physics Stuff
 		apply_impulse(dir * recoil, pos)
-
-
-	
