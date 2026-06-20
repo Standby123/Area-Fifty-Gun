@@ -21,7 +21,6 @@ animations = [{
 
 [node name="Player" type="RigidBody2D" unique_id=2103491096]
 mass = 0.05
-gravity_scale = 0.7
 script = ExtResource("1_7dd06")
 
 [node name="Collider" type="CollisionPolygon2D" parent="." unique_id=1687368870]
@@ -39,9 +38,3 @@ target_position = Vector2(-9.536743e-07, 15)
 position = Vector2(21.75, -5)
 scale = Vector2(2.9, 1)
 texture = ExtResource("3_38rej")
-
-[node name="Timer" type="Timer" parent="." unique_id=470920298]
-wait_time = 0.4
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
