@@ -20,7 +20,7 @@ animations = [{
 }]
 
 [node name="Player" type="RigidBody2D" unique_id=2103491096]
-mass = 0.1
+mass = 0.05
 script = ExtResource("1_7dd06")
 
 [node name="Collider" type="CollisionPolygon2D" parent="." unique_id=1687368870]
