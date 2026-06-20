@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dwmcrvu16ci3p" path="res://Assets/Sprites/guntherStatic.png" id="1_6cd4h"]
 [ext_resource type="Script" uid="uid://dyfs1hwdfsjqi" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
+[ext_resource type="Texture2D" uid="uid://cbkv8rmdsqjrg" path="res://Assets/Sprites/Direction_Marker.png" id="3_38rej"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dd06"]
 atlas = ExtResource("1_6cd4h")
@@ -28,6 +29,12 @@ polygon = PackedVector2Array(-14, 12, -14, -7, 14, -7, 14, -2, -7, -2, -7, 13, -
 [node name="Sprite_Animation" type="AnimatedSprite2D" parent="." unique_id=2096437787]
 sprite_frames = SubResource("SpriteFrames_38rej")
 
-[node name="Muzzle" type="Node2D" parent="." unique_id=1470374978]
+[node name="Muzzle" type="RayCast2D" parent="." unique_id=1319957381]
 position = Vector2(14, -5)
-rotation = 0.5235988
+rotation = -1.5707964
+target_position = Vector2(-9.536743e-07, 15)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2109974461]
+position = Vector2(21.75, -5)
+scale = Vector2(2.9, 1)
+texture = ExtResource("3_38rej")
