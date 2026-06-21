@@ -21,64 +21,40 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_23lac"]
-load_path = "res://.godot/imported/pistol_muzzle_flare_bigger.png-bcc6ce1eb9c43358425a84129bc6bc32.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_23lac"]
+atlas = ExtResource("6_w3t24")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3t24"]
-atlas = SubResource("CompressedTexture2D_23lac")
-region = Rect2(0, 0, 32, 32)
+atlas = ExtResource("6_w3t24")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c3tg1"]
-atlas = SubResource("CompressedTexture2D_23lac")
-region = Rect2(32, 0, 32, 32)
+atlas = ExtResource("6_w3t24")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lerqx"]
-atlas = SubResource("CompressedTexture2D_23lac")
-region = Rect2(64, 0, 32, 32)
+atlas = ExtResource("6_w3t24")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jp3cw"]
-atlas = SubResource("CompressedTexture2D_23lac")
-region = Rect2(96, 0, 32, 32)
+atlas = ExtResource("6_w3t24")
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecf78"]
-atlas = SubResource("CompressedTexture2D_23lac")
-region = Rect2(128, 0, 32, 32)
+atlas = ExtResource("6_w3t24")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vy5gb"]
-atlas = SubResource("CompressedTexture2D_23lac")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rsrmw"]
-atlas = ExtResource("6_w3t24")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o8kuu"]
-atlas = ExtResource("6_w3t24")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xv74q"]
-atlas = ExtResource("6_w3t24")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8qq7w"]
-atlas = ExtResource("6_w3t24")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tcr7l"]
-atlas = ExtResource("6_w3t24")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yrbh7"]
-atlas = ExtResource("6_w3t24")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aq5fl"]
 atlas = ExtResource("6_w3t24")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rsrmw"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23lac")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w3t24")
 }, {
@@ -96,29 +72,8 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vy5gb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rsrmw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o8kuu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xv74q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8qq7w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tcr7l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yrbh7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aq5fl")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
 "speed": 5.0
 }]
