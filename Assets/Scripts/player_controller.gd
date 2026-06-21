@@ -10,6 +10,8 @@ signal shot_fired
 
 const BULLET = preload("res://Assets/Scenes/bullet.tscn")
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 func _physics_process(delta: float) -> void:
 	
 	angular_damp = 2
@@ -42,9 +44,9 @@ func _on_timer_timeout() -> void:
 	shot_allowed = true # Replace with function body.
 
 func shoot():
-	var dir = muzzle.global_rotation
 	
 	var new_bullet = BULLET.instantiate()
 	new_bullet.position = muzzle.global_position
 	new_bullet.angle = muzzle.global_rotation
 	get_tree().root.add_child(new_bullet)
+	animation_player.play("Pistol Shot")
