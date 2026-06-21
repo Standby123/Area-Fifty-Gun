@@ -73,7 +73,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vy5gb")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
@@ -121,6 +121,7 @@ _data = {
 
 [node name="Player" type="RigidBody2D" unique_id=2103491096]
 mass = 0.05
+gravity_scale = 0.7
 script = ExtResource("1_7dd06")
 
 [node name="Collider" type="CollisionPolygon2D" parent="." unique_id=1687368870]
