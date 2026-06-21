@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dyfs1hwdfsjqi" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
 [ext_resource type="Texture2D" uid="uid://cbkv8rmdsqjrg" path="res://Assets/Sprites/Direction_Marker.png" id="3_38rej"]
 [ext_resource type="AudioStream" uid="uid://b4guxi5vxu3a1" path="res://Assets/Audio/SFX/bitcrushed_pistol1.mp3" id="4_t1xgp"]
-[ext_resource type="Texture2D" uid="uid://e1ru37sastfx" path="res://Assets/Sprites/Animtion Frames/pistol_muzzle_flare-Sheet.png" id="5_23lac"]
+[ext_resource type="Texture2D" uid="uid://caofbighrc1ni" path="res://Assets/Sprites/Animtion Frames/pistol_muzzle_flare_big_2.png" id="6_w3t24"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dd06"]
 atlas = ExtResource("1_6cd4h")
@@ -21,23 +21,62 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_23lac"]
+load_path = "res://.godot/imported/pistol_muzzle_flare_bigger.png-bcc6ce1eb9c43358425a84129bc6bc32.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3t24"]
-atlas = ExtResource("5_23lac")
+atlas = SubResource("CompressedTexture2D_23lac")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c3tg1"]
-atlas = ExtResource("5_23lac")
+atlas = SubResource("CompressedTexture2D_23lac")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lerqx"]
-atlas = ExtResource("5_23lac")
+atlas = SubResource("CompressedTexture2D_23lac")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jp3cw"]
-atlas = ExtResource("5_23lac")
+atlas = SubResource("CompressedTexture2D_23lac")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ecf78"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecf78"]
+atlas = SubResource("CompressedTexture2D_23lac")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy5gb"]
+atlas = SubResource("CompressedTexture2D_23lac")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsrmw"]
+atlas = ExtResource("6_w3t24")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8kuu"]
+atlas = ExtResource("6_w3t24")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv74q"]
+atlas = ExtResource("6_w3t24")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qq7w"]
+atlas = ExtResource("6_w3t24")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcr7l"]
+atlas = ExtResource("6_w3t24")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrbh7"]
+atlas = ExtResource("6_w3t24")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq5fl"]
+atlas = ExtResource("6_w3t24")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rsrmw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -51,6 +90,33 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jp3cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecf78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy5gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsrmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8kuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv74q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qq7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcr7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrbh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq5fl")
 }],
 "loop": false,
 "name": &"default",
@@ -128,10 +194,8 @@ stream = ExtResource("4_t1xgp")
 [node name="Muzzle Flash" type="AnimatedSprite2D" parent="." unique_id=721133820]
 visible = false
 position = Vector2(15, -5)
-sprite_frames = SubResource("SpriteFrames_ecf78")
-frame = 3
-frame_progress = 1.0
-speed_scale = 9.0
+sprite_frames = SubResource("SpriteFrames_rsrmw")
+speed_scale = 10.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=902916855]
 libraries/ = SubResource("AnimationLibrary_c3tg1")

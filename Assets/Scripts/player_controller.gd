@@ -16,7 +16,6 @@ const BULLET = preload("res://Assets/Scenes/bullet.tscn")
 func _physics_process(delta: float) -> void:
 	
 	angular_damp = 2
-	
 	if abs(angular_velocity) > 10:
 		angular_velocity *= 0.7
 	
@@ -55,4 +54,5 @@ func shoot():
 	muzzle_flash.visible = true
 	muzzle_flash.play("default")
 	animation_player.play("Pistol Shot")
+	
 	

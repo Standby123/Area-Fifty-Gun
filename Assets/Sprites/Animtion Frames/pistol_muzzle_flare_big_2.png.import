@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e1ru37sastfx"
-path="res://.godot/imported/pistol_muzzle_flare-Sheet.png-3cd2be4aabb7b0c2e56b46e6bf8937af.ctex"
+uid="uid://caofbighrc1ni"
+path="res://.godot/imported/pistol_muzzle_flare_big_2.png-594e1ffc6cb5b4b4d79dcdc1ea639b3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Animtion Frames/pistol_muzzle_flare-Sheet.png"
-dest_files=["res://.godot/imported/pistol_muzzle_flare-Sheet.png-3cd2be4aabb7b0c2e56b46e6bf8937af.ctex"]
+source_file="res://Assets/Sprites/Animtion Frames/pistol_muzzle_flare_big_2.png"
+dest_files=["res://.godot/imported/pistol_muzzle_flare_big_2.png-594e1ffc6cb5b4b4d79dcdc1ea639b3f.ctex"]
 
 [params]
 
