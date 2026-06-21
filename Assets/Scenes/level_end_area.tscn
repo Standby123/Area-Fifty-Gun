@@ -1,13 +1,8 @@
-[gd_scene format=3 uid="uid://bkfwjr451fxi3"]
+[gd_scene format=3 uid="uid://cnchikxh2e1eq"]
 
 [ext_resource type="Script" uid="uid://cs2c2psqnodkb" path="res://Assets/Scripts/level_end_area.gd" id="1_0yihe"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mop1p"]
-
 [node name="Level End Area" type="Area2D" unique_id=746342500]
 script = ExtResource("1_0yihe")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1993673342]
-shape = SubResource("RectangleShape2D_mop1p")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
