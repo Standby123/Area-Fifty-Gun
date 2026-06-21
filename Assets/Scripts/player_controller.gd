@@ -8,9 +8,7 @@ signal shot_fired
 
 @onready var muzzle: Node2D = $Muzzle
 
-func _physics_ready():
-	pass
-	
+const BULLET = preload("res://Assets/Scenes/bullet.tscn")
 
 func _physics_process(delta: float) -> void:
 	
@@ -34,8 +32,19 @@ func _physics_process(delta: float) -> void:
 			
 			# Physics Stuff
 			apply_impulse(dir * recoil, pos)
-
+			
+			# Create Bullet
+			shoot()
+			
 
 func _on_timer_timeout() -> void:
 	# allow another shot after cooldown times out
 	shot_allowed = true # Replace with function body.
+
+func shoot():
+	var dir = muzzle.global_rotation
+	
+	var new_bullet = BULLET.instantiate()
+	new_bullet.position = muzzle.global_position
+	new_bullet.angle = muzzle.global_rotation
+	get_tree().root.add_child(new_bullet)

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d2tpd0e6e3gff"]
+
+[ext_resource type="Script" uid="uid://5yy3w4mage8f" path="res://Assets/Scripts/bullet.gd" id="1_gbjqq"]
+[ext_resource type="Texture2D" uid="uid://cbkv8rmdsqjrg" path="res://Assets/Sprites/Direction_Marker.png" id="2_ry04a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ry04a"]
+radius = 2.0
+
+[node name="Bullet" type="RigidBody2D" unique_id=1075435794]
+rotation = -1.5707964
+collision_layer = 2
+collision_mask = 3
+mass = 0.01
+gravity_scale = 0.0
+script = ExtResource("1_gbjqq")
+
+[node name="Bullet_collider" type="CollisionShape2D" parent="." unique_id=743700470]
+shape = SubResource("CircleShape2D_ry04a")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1682588710]
+texture = ExtResource("2_ry04a")

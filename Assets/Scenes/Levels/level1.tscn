@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bqgxr8jp38hwx" path="res://Assets/Tilesets/1_Industrial_Tileset_1.png" id="1_clufx"]
 [ext_resource type="PackedScene" uid="uid://cr1k8oodxgsnm" path="res://Assets/Scenes/player.tscn" id="2_5m5in"]
-[ext_resource type="PackedScene" uid="uid://bkfwjr451fxi3" path="res://Assets/Scenes/level_end_area.tscn" id="3_e4x0h"]
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="4_5e7qr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5e7qr"]
@@ -130,9 +129,6 @@ tile_set = SubResource("TileSet_arc0y")
 [node name="Player" parent="." unique_id=2103491096 instance=ExtResource("2_5m5in")]
 position = Vector2(184, 30)
 gravity_scale = 0.7
-
-[node name="Level End Area" parent="." unique_id=746342500 instance=ExtResource("3_e4x0h")]
-position = Vector2(150, 117)
 
 [node name="Camera" parent="." unique_id=1696142273 instance=ExtResource("4_5e7qr")]
 position = Vector2(0, 26)

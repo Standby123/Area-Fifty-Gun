@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bqgxr8jp38hwx" path="res://Assets/Tilesets/1_Industrial_Tileset_1.png" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://cr1k8oodxgsnm" path="res://Assets/Scenes/player.tscn" id="4_7jktm"]
 [ext_resource type="Texture2D" uid="uid://cpj1tb6veq7aq" path="res://Assets/Tilesets/Tilemap.png" id="5_7jktm"]
-[ext_resource type="PackedScene" uid="uid://bkfwjr451fxi3" path="res://Assets/Scenes/level_end_area.tscn" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://d2tpd0e6e3gff" path="res://Assets/Scenes/bullet.tscn" id="6_ryrav"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc0e3"]
 texture = ExtResource("1_e2o6t")
@@ -255,5 +255,4 @@ zoom = Vector2(1.8, 1.8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TempWorldFloor" unique_id=1312080129]
 shape = SubResource("WorldBoundaryShape2D_fc0e3")
 
-[node name="Level End Area" parent="." unique_id=746342500 instance=ExtResource("6_ryrav")]
-position = Vector2(61, -17)
+[node name="Bullet" parent="." unique_id=1075435794 instance=ExtResource("6_ryrav")]
