@@ -38,3 +38,9 @@ target_position = Vector2(-9.536743e-07, 15)
 position = Vector2(21.75, -5)
 scale = Vector2(2.9, 1)
 texture = ExtResource("3_38rej")
+
+[node name="Timer" type="Timer" parent="." unique_id=1173540308]
+wait_time = 0.4
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bnl2snl43hpin"]
+
+[sub_resource type="GDScript" id="GDScript_ddlpd"]
+script/source = "extends Camera2D
+
+@export var decay := 0.6 #How quickly shaking will stop [0,1].
+@export var max_offset := Vector2(100, 75) #Maximum displacement in pixels.
+@export var max_roll = 0.1 #Maximum rotation in radians (use sparingly).
+@export var noise : FastNoiseLite #The source of random values.
+
+var noise_y = 0 #Value used to move through the noise
+
+var trauma := 0.0 #Current shake strength
+var trauma_pwr := 2 #Trauma exponent. Use [2,3]
+
+func _on_player_shot_fired() -> void:
+	add_trauma(0.5)
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	randomize()
+	noise.seed = randi()
+
+func add_trauma(amount : float):
+	trauma = min(trauma + amount, 1.0)
+
+func shake(): 
+	var amt = pow(trauma, trauma_pwr)
+	noise_y += 1
+	rotation = max_roll * amt * noise.get_noise_2d(0, noise_y)
+	offset.x = max_offset.x * amt * noise.get_noise_2d(1000, noise_y)
+	offset.y = max_offset.y * amt * noise.get_noise_2d(2000, noise_y)
+	
+func _process(delta):
+	if trauma:
+		trauma = max(trauma - decay * delta, 0)
+		shake()
+		#optional
+	elif offset.x != 0 or offset.y != 0 or rotation != 0:
+		lerp(offset.x,0.0,1)
+		lerp(offset.y,0.0,1)
+		lerp(rotation,0.0,1)
+"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_e2hj7"]
+noise_type = 3
+
+[node name="Camera" type="Camera2D" unique_id=1696142273]
+ignore_rotation = false
+zoom = Vector2(1.8, 1.8)
+script = SubResource("GDScript_ddlpd")
+decay = 0.5
+max_roll = 0.2
+noise = SubResource("FastNoiseLite_e2hj7")
