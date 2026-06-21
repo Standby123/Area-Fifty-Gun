@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dyfs1hwdfsjqi" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
 [ext_resource type="Texture2D" uid="uid://cbkv8rmdsqjrg" path="res://Assets/Sprites/Direction_Marker.png" id="3_38rej"]
 [ext_resource type="AudioStream" uid="uid://b4guxi5vxu3a1" path="res://Assets/Audio/SFX/bitcrushed_pistol1.mp3" id="4_t1xgp"]
+[ext_resource type="Texture2D" uid="uid://e1ru37sastfx" path="res://Assets/Sprites/Animtion Frames/pistol_muzzle_flare-Sheet.png" id="5_23lac"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dd06"]
 atlas = ExtResource("1_6cd4h")
@@ -19,6 +20,45 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3t24"]
+atlas = ExtResource("5_23lac")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3tg1"]
+atlas = ExtResource("5_23lac")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lerqx"]
+atlas = ExtResource("5_23lac")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp3cw"]
+atlas = ExtResource("5_23lac")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ecf78"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3t24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3tg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lerqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp3cw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_vy5gb"]
+resource_name = "Muzzle Flash"
 
 [sub_resource type="Animation" id="Animation_23lac"]
 resource_name = "Pistol Shot"
@@ -53,6 +93,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c3tg1"]
 _data = {
+&"Muzzle Flash": SubResource("Animation_vy5gb"),
 &"Pistol Shot": SubResource("Animation_23lac"),
 &"RESET": SubResource("Animation_w3t24")
 }
@@ -83,6 +124,14 @@ autostart = true
 
 [node name="BitcrushedPistol1" type="AudioStreamPlayer" parent="." unique_id=1809177000]
 stream = ExtResource("4_t1xgp")
+
+[node name="Muzzle Flash" type="AnimatedSprite2D" parent="." unique_id=721133820]
+visible = false
+position = Vector2(15, -5)
+sprite_frames = SubResource("SpriteFrames_ecf78")
+frame = 3
+frame_progress = 1.0
+speed_scale = 9.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=902916855]
 libraries/ = SubResource("AnimationLibrary_c3tg1")

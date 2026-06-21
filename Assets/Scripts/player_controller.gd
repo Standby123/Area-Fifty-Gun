@@ -11,6 +11,7 @@ signal shot_fired
 const BULLET = preload("res://Assets/Scenes/bullet.tscn")
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var muzzle_flash: AnimatedSprite2D = $"Muzzle Flash"
 
 func _physics_process(delta: float) -> void:
 	
@@ -25,7 +26,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("Rotate Right"):
 		angular_velocity = 8
 			
-	if shot_allowed == true and not animation_player.is_playing():	
+	if shot_allowed == true and not animation_player.is_playing():
+		
 		if Input.is_action_just_pressed("Shoot"):
 			shot_allowed = false
 			shot_fired.emit() # emit a signal to say a shot was fired
@@ -45,10 +47,12 @@ func _on_timer_timeout() -> void:
 	shot_allowed = true # Replace with function body.
 
 func shoot():
-	
 	var new_bullet = BULLET.instantiate()
 	new_bullet.position = muzzle.global_position
 	new_bullet.angle = muzzle.global_rotation
 	get_tree().root.add_child(new_bullet)
 	
+	muzzle_flash.visible = true
+	muzzle_flash.play("default")
 	animation_player.play("Pistol Shot")
+	
