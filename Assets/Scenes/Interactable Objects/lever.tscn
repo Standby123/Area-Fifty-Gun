@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://c5soqo4nu11we"]
+
+[ext_resource type="Script" uid="uid://dj16nf3m7opsb" path="res://Assets/Scripts/lever.gd" id="1_03pvg"]
+[ext_resource type="Texture2D" uid="uid://dxcr11xk1juax" path="res://Assets/Sprites/Ase_and_unfinished/Lever Animation.png" id="2_84bge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t66ab"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67ya3"]
+atlas = ExtResource("2_84bge")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suiyp"]
+atlas = ExtResource("2_84bge")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iu5e"]
+atlas = ExtResource("2_84bge")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58kjh"]
+atlas = ExtResource("2_84bge")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ypi51"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67ya3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suiyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iu5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58kjh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Lever" type="Area2D" unique_id=1120406888]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_03pvg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=526665422]
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_t66ab")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1468840954]
+sprite_frames = SubResource("SpriteFrames_ypi51")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

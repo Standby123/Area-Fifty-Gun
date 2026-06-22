@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://km8mt26palfb"]
 
 [ext_resource type="PackedScene" uid="uid://cr1k8oodxgsnm" path="res://Assets/Scenes/player.tscn" id="2_5m5in"]
-[ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="3_e4x0h"]
+[ext_resource type="PackedScene" path="res://Assets/Scenes/floor_and_walls.tscn" id="3_e4x0h"]
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="4_5e7qr"]
-[ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/level_end_area.tscn" id="4_81xjb"]
+[ext_resource type="PackedScene" uid="uid://bkfwjr451fxi3" path="res://Assets/Scenes/level_end_area.tscn" id="4_81xjb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5e7qr"]
-size = Vector2(250.5, 60)
+size = Vector2(170, 60)
 
 [node name="Main2" type="Node2D" unique_id=2099700060]
 
@@ -23,7 +23,7 @@ tile_map_data = PackedByteArray("AAD2/wUAAQABAAIAAAD3/wUAAQABAAIAAAD4/wUAAQABAAI
 position = Vector2(-578, -104)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level End Area" unique_id=642454673]
-position = Vector2(258.25, 8)
+position = Vector2(181, 8)
 shape = SubResource("RectangleShape2D_5e7qr")
 
 [connection signal="shot_fired" from="Player" to="Camera" method="_on_player_shot_fired"]
