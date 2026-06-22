@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://dwlxohmcd7pni"]
 
-[ext_resource type="Script" uid="uid://cj6fpwygojcww" path="res://Assets/Scripts/main_menu.gd" id="1_7anqe"]
+[ext_resource type="Script" path="res://Assets/Scripts/main_menu.gd" id="1_7anqe"]
 [ext_resource type="Texture2D" uid="uid://cacjjgsjshdb3" path="res://Assets/Sprites/Ase_and_unfinished/Temp_background.png" id="2_r6ogh"]
 [ext_resource type="Texture2D" uid="uid://dwmcrvu16ci3p" path="res://Assets/Sprites/guntherStatic.png" id="3_32c4e"]
 [ext_resource type="Texture2D" uid="uid://dmhpnvyw3v7uw" path="res://Assets/Sprites/shottoStatic.png" id="4_77s64"]
 [ext_resource type="FontFile" uid="uid://c72ql7kjnvo40" path="res://Assets/Fonts/BlockCraft.otf" id="5_cdq8x"]
 [ext_resource type="FontFile" uid="uid://dvu4ovbpd6tb0" path="res://Assets/Fonts/BoldsPixels.ttf" id="6_cd8vj"]
 [ext_resource type="PackedScene" uid="uid://cr1k8oodxgsnm" path="res://Assets/Scenes/player.tscn" id="7_escwx"]
-[ext_resource type="PackedScene" uid="uid://8wucsy1likjy" path="res://Assets/Scenes/bullet_handler.tscn" id="8_36tx0"]
+[ext_resource type="PackedScene" path="res://Assets/Scenes/bullet_handler.tscn" id="8_36tx0"]
+[ext_resource type="AudioStream" uid="uid://bllo5cwlfh0l4" path="res://Assets/Audio/Music/very serious2.mp3" id="9_r6ogh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pddk7"]
 texture = ExtResource("2_r6ogh")
@@ -301,6 +302,10 @@ position = Vector2(320, 504)
 
 [node name="Bullet Handler" parent="." unique_id=1287969283 instance=ExtResource("8_36tx0")]
 unique_name_in_owner = true
+
+[node name="Intro Music" type="AudioStreamPlayer" parent="." unique_id=224921243]
+stream = ExtResource("9_r6ogh")
+autoplay = true
 
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="New Game" to="." method="_on_new_game_pressed"]
