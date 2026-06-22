@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b3gfrem476gtb"
-path="res://.godot/imported/Shock Surgent.otf-13806e4576a6300212a6529d6a4470a3.fontdata"
+uid="uid://c72ql7kjnvo40"
+path="res://.godot/imported/BlockCraft.otf-dd4b46fcac789d25d0a8aa27f9ae9aa1.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/Shock Surgent.otf"
-dest_files=["res://.godot/imported/Shock Surgent.otf-13806e4576a6300212a6529d6a4470a3.fontdata"]
+source_file="res://Assets/Fonts/BlockCraft.otf"
+dest_files=["res://.godot/imported/BlockCraft.otf-dd4b46fcac789d25d0a8aa27f9ae9aa1.fontdata"]
 
 [params]
 

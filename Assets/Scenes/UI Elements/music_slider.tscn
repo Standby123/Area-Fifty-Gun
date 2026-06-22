@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bqcee3avu8b3d"]
+
+[ext_resource type="Texture2D" uid="uid://be51f7pxfygvs" path="res://Assets/Sprites/bullet1.png" id="1_wkuiu"]
+[ext_resource type="Texture2D" uid="uid://5bci5wq70sqb" path="res://Assets/Sprites/Ase_and_unfinished/Tick_Smoke.png" id="2_3m3ai"]
+[ext_resource type="Script" uid="uid://bg6kcw6tg3wb3" path="res://Assets/Scripts/music_slider.gd" id="3_3m3ai"]
+
+[node name="Music Slider" type="HSlider" unique_id=318021657]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -308.0
+offset_top = -108.0
+offset_right = -158.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+theme_override_icons/grabber = ExtResource("1_wkuiu")
+theme_override_icons/grabber_highlight = ExtResource("1_wkuiu")
+theme_override_icons/tick = ExtResource("2_3m3ai")
+script = ExtResource("3_3m3ai")

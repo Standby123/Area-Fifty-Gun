@@ -1,0 +1,306 @@
+[gd_scene format=3 uid="uid://dwlxohmcd7pni"]
+
+[ext_resource type="Script" uid="uid://cj6fpwygojcww" path="res://Assets/Scripts/main_menu.gd" id="1_7anqe"]
+[ext_resource type="Texture2D" uid="uid://cacjjgsjshdb3" path="res://Assets/Sprites/Ase_and_unfinished/Temp_background.png" id="2_r6ogh"]
+[ext_resource type="Texture2D" uid="uid://dwmcrvu16ci3p" path="res://Assets/Sprites/guntherStatic.png" id="3_32c4e"]
+[ext_resource type="Texture2D" uid="uid://dmhpnvyw3v7uw" path="res://Assets/Sprites/shottoStatic.png" id="4_77s64"]
+[ext_resource type="FontFile" uid="uid://c72ql7kjnvo40" path="res://Assets/Fonts/BlockCraft.otf" id="5_cdq8x"]
+[ext_resource type="FontFile" uid="uid://dvu4ovbpd6tb0" path="res://Assets/Fonts/BoldsPixels.ttf" id="6_cd8vj"]
+[ext_resource type="PackedScene" uid="uid://cr1k8oodxgsnm" path="res://Assets/Scenes/player.tscn" id="7_escwx"]
+[ext_resource type="PackedScene" uid="uid://8wucsy1likjy" path="res://Assets/Scenes/bullet_handler.tscn" id="8_36tx0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pddk7"]
+texture = ExtResource("2_r6ogh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_165qh"]
+texture = ExtResource("3_32c4e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y0swl"]
+texture = ExtResource("4_77s64")
+
+[sub_resource type="Theme" id="Theme_wj48x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olk6w"]
+bg_color = Color(0.08627451, 0.08627451, 0.08627451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igs57"]
+bg_color = Color(0.2574758, 0.25747576, 0.25747573, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sfg1"]
+bg_color = Color(0.15012382, 0.15012382, 0.15012382, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Animation" id="Animation_165qh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.27925268]
+}
+
+[sub_resource type="Animation" id="Animation_y0swl"]
+resource_name = "Wobble"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.27925268, 0.34906584, 0.27925268]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fshme"]
+_data = {
+&"RESET": SubResource("Animation_165qh"),
+&"Wobble": SubResource("Animation_y0swl")
+}
+
+[sub_resource type="Animation" id="Animation_fshme"]
+resource_name = "Main Text Appearance"
+length = 2.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "A", "Ar", "Are", "Area", "Area
+", "Area
+F", "Area
+Fi", "Area
+Fif", "Area
+Fift", "Area
+Fifty", "Area
+Fifty
+", "Area
+Fifty
+G", "Area
+Fifty
+Gu", "Area
+Fifty
+Gun"]
+}
+
+[sub_resource type="Animation" id="Animation_tnocd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Splash Text:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.27925268]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main Text:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_ui8xn"]
+resource_name = "Splash Text Wobble"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Splash Text:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.27925268, 0.3490658503988659, 0.27925268]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v84q5"]
+_data = {
+&"Main Text Appearance": SubResource("Animation_fshme"),
+&"RESET": SubResource("Animation_tnocd"),
+&"Splash Text Wobble": SubResource("Animation_ui8xn")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sfg1"]
+size = Vector2(1217, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pddk7"]
+size = Vector2(20, 645)
+
+[node name="Main Menu" type="Control" unique_id=1497445863]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7anqe")
+
+[node name="Background" type="Panel" parent="." unique_id=1409590164]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pddk7")
+
+[node name="Gunther" type="Panel" parent="." unique_id=527269659]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 228.0
+offset_right = 140.0
+offset_bottom = 268.0
+rotation = 0.0763769
+scale = Vector2(5, 5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_165qh")
+
+[node name="Shotto" type="Panel" parent="." unique_id=1287623972]
+layout_mode = 0
+offset_left = 1157.0
+offset_top = 310.0
+offset_right = 1197.0
+offset_bottom = 350.0
+rotation = 0.19337828
+scale = Vector2(-10, 5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_y0swl")
+
+[node name="Settings" type="Button" parent="." unique_id=1720512175]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 192.0
+offset_right = 318.0
+offset_bottom = 232.0
+size_flags_vertical = 3
+theme = SubResource("Theme_wj48x")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("5_cdq8x")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_olk6w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_igs57")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8sfg1")
+text = "Settings"
+
+[node name="New Game" type="Button" parent="." unique_id=929736122]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 103.0
+offset_right = 314.0
+offset_bottom = 177.0
+size_flags_vertical = 3
+theme = SubResource("Theme_wj48x")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("5_cdq8x")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_olk6w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_igs57")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8sfg1")
+text = "New Game"
+
+[node name="Splash Text" type="Label" parent="." unique_id=2047534310]
+layout_mode = 0
+offset_left = 869.99994
+offset_top = 109.99999
+offset_right = 1120.0
+offset_bottom = 197.0
+rotation = 0.27925268
+theme_override_fonts/font = ExtResource("5_cdq8x")
+theme_override_font_sizes/font_size = 19
+text = "There ain't enough rounds  in this town for the two of us..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Splash Text" unique_id=1672629647]
+libraries/ = SubResource("AnimationLibrary_fshme")
+autoplay = &"Wobble"
+
+[node name="Main Text" type="Label" parent="." unique_id=1361884645]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9843137, 0.9490196, 0.21176471, 1)
+theme_override_fonts/font = ExtResource("6_cd8vj")
+theme_override_font_sizes/font_size = 120
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text Appearance" type="AnimationPlayer" parent="Main Text" unique_id=706928720]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_v84q5")
+autoplay = &"Main Text Appearance"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=743644902]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1888354534]
+position = Vector2(576.5, 616)
+shape = SubResource("RectangleShape2D_8sfg1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1920041460]
+position = Vector2(579, 37)
+shape = SubResource("RectangleShape2D_8sfg1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=552261918]
+position = Vector2(10, 311.5)
+shape = SubResource("RectangleShape2D_pddk7")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1766871020]
+position = Vector2(1141, 314)
+shape = SubResource("RectangleShape2D_pddk7")
+
+[node name="Player" parent="." unique_id=2103491096 instance=ExtResource("7_escwx")]
+position = Vector2(320, 504)
+
+[node name="Bullet Handler" parent="." unique_id=1287969283 instance=ExtResource("8_36tx0")]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="New Game" to="." method="_on_new_game_pressed"]

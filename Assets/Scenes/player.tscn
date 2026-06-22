@@ -244,6 +244,7 @@ autostart = true
 
 [node name="BitcrushedPistol1" type="AudioStreamPlayer" parent="." unique_id=1809177000]
 stream = ExtResource("4_t1xgp")
+bus = &"SFX"
 
 [node name="Muzzle Flash" type="AnimatedSprite2D" parent="." unique_id=721133820]
 visible = false

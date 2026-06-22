@@ -5,4 +5,4 @@ func _on_new_game_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Assets/Scenes/UI Elements/settings_menu.tscn")
