@@ -1,10 +1,14 @@
 [gd_scene format=4 uid="uid://cr6vuyx1hhcy"]
 
+[ext_resource type="PackedScene" uid="uid://8wucsy1likjy" path="res://Assets/Scenes/bullet_handler.tscn" id="1_q1t0u"]
 [ext_resource type="PackedScene" uid="uid://cr1k8oodxgsnm" path="res://Assets/Scenes/player.tscn" id="2_q7ji7"]
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="3_ived2"]
-[ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="3_q1t0u"]
+[ext_resource type="PackedScene" path="res://Assets/Scenes/floor_and_walls.tscn" id="3_q1t0u"]
 
 [node name="Main2" type="Node2D" unique_id=744974072]
+
+[node name="Bullet Handler" parent="." unique_id=1287969283 instance=ExtResource("1_q1t0u")]
+unique_name_in_owner = true
 
 [node name="Player" parent="." unique_id=2103491096 instance=ExtResource("2_q7ji7")]
 position = Vector2(286, 118)

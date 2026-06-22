@@ -8,7 +8,11 @@ signal shot_fired
 
 @onready var muzzle: Node2D = $Muzzle
 
+# Bullet and Entity
 const BULLET = preload("res://Assets/Scenes/bullet.tscn")
+var shot_count: int = 0
+@onready var bullet_handler: Node = %"Bullet Handler"
+
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var muzzle_flash: AnimatedSprite2D = $"Muzzle Flash"
@@ -46,10 +50,14 @@ func _on_timer_timeout() -> void:
 	shot_allowed = true # Replace with function body.
 
 func shoot():
+	shot_count += 1
+	
 	var new_bullet = BULLET.instantiate()
 	new_bullet.position = muzzle.global_position
 	new_bullet.angle = muzzle.global_rotation
-	get_tree().root.add_child(new_bullet)
+	new_bullet.name = "Bullet " + str(shot_count)
+	bullet_handler.add_child(new_bullet)
+	bullet_handler.Clear_Bullets(shot_count)
 	
 	muzzle_flash.visible = true
 	muzzle_flash.play("default")
