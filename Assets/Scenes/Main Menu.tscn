@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://dwlxohmcd7pni"]
+
+[ext_resource type="Script" uid="uid://cj6fpwygojcww" path="res://Assets/Scripts/main_menu.gd" id="1_8sfg1"]
+[ext_resource type="Texture2D" uid="uid://t73cc2gqy8dg" path="res://Assets/Sprites/Ase_and_unfinished/title_screen2.png" id="1_igs57"]
+[ext_resource type="FontFile" uid="uid://b3gfrem476gtb" path="res://Assets/Fonts/Shock Surgent.otf" id="1_t7e58"]
+[ext_resource type="Texture2D" uid="uid://dwmcrvu16ci3p" path="res://Assets/Sprites/guntherStatic.png" id="2_8sfg1"]
+[ext_resource type="Texture2D" uid="uid://dmhpnvyw3v7uw" path="res://Assets/Sprites/shottoStatic.png" id="3_cxne4"]
+[ext_resource type="PackedScene" uid="uid://cr1k8oodxgsnm" path="res://Assets/Scenes/player.tscn" id="6_cxne4"]
+[ext_resource type="PackedScene" uid="uid://8wucsy1likjy" path="res://Assets/Scenes/bullet_handler.tscn" id="7_pddk7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pddk7"]
+texture = ExtResource("1_igs57")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_165qh"]
+texture = ExtResource("2_8sfg1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y0swl"]
+texture = ExtResource("3_cxne4")
+
+[sub_resource type="Theme" id="Theme_wj48x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olk6w"]
+bg_color = Color(0.08627451, 0.08627451, 0.08627451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igs57"]
+bg_color = Color(0.2574758, 0.25747576, 0.25747573, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sfg1"]
+bg_color = Color(0.15012382, 0.15012382, 0.15012382, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sfg1"]
+size = Vector2(1217, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pddk7"]
+size = Vector2(20, 645)
+
+[node name="Main Menu" type="Control" unique_id=1497445863]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8sfg1")
+
+[node name="Background text" type="Panel" parent="." unique_id=1409590164]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pddk7")
+
+[node name="Gunther" type="Panel" parent="." unique_id=527269659]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 228.0
+offset_right = 140.0
+offset_bottom = 268.0
+rotation = 0.0763769
+scale = Vector2(5, 5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_165qh")
+
+[node name="Panel" type="Panel" parent="." unique_id=1287623972]
+layout_mode = 0
+offset_left = 1157.0
+offset_top = 310.0
+offset_right = 1197.0
+offset_bottom = 350.0
+rotation = 0.19337828
+scale = Vector2(-10, 5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_y0swl")
+
+[node name="Settings" type="Button" parent="." unique_id=1720512175]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 167.0
+offset_right = 318.0
+offset_bottom = 259.0
+size_flags_vertical = 3
+theme = SubResource("Theme_wj48x")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("1_t7e58")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_olk6w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_igs57")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8sfg1")
+text = "Settings"
+
+[node name="New Game" type="Button" parent="." unique_id=929736122]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 115.0
+offset_right = 314.0
+offset_bottom = 155.0
+size_flags_vertical = 3
+theme = SubResource("Theme_wj48x")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("1_t7e58")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_olk6w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_igs57")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8sfg1")
+text = "New Game"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=743644902]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1888354534]
+position = Vector2(576.5, 616)
+shape = SubResource("RectangleShape2D_8sfg1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1920041460]
+position = Vector2(579, 37)
+shape = SubResource("RectangleShape2D_8sfg1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=552261918]
+position = Vector2(10, 311.5)
+shape = SubResource("RectangleShape2D_pddk7")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1766871020]
+position = Vector2(1141, 314)
+shape = SubResource("RectangleShape2D_pddk7")
+
+[node name="Player" parent="." unique_id=2103491096 instance=ExtResource("6_cxne4")]
+position = Vector2(320, 504)
+
+[node name="Bullet Handler" parent="." unique_id=1287969283 instance=ExtResource("7_pddk7")]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="New Game" to="." method="_on_new_game_pressed"]
