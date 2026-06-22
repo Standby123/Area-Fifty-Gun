@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bnl2snl43hpin"]
 
+[ext_resource type="PackedScene" uid="uid://dvjnif2gqdr1y" path="res://Assets/Scenes/UI Elements/settings_overlay.tscn" id="1_djjcv"]
+
 [sub_resource type="GDScript" id="GDScript_ddlpd"]
 script/source = "extends Camera2D
 
@@ -52,3 +54,9 @@ script = SubResource("GDScript_ddlpd")
 decay = 0.5
 max_roll = 0.2
 noise = SubResource("FastNoiseLite_e2hj7")
+
+[node name="Overlay Menu" parent="." unique_id=1873247851 instance=ExtResource("1_djjcv")]
+offset_left = -220.0
+offset_top = -115.0
+offset_right = -220.0
+offset_bottom = -115.0
