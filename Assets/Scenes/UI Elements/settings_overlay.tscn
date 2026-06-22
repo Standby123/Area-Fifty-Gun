@@ -42,6 +42,29 @@ _data = {
 &"Write Text": SubResource("Animation_rll10")
 }
 
+[sub_resource type="Theme" id="Theme_rvp5i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxhfm"]
+bg_color = Color(0.08627451, 0.08627451, 0.08627451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61u7w"]
+bg_color = Color(0.2574758, 0.25747576, 0.25747573, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3d8o"]
+bg_color = Color(0.15012382, 0.15012382, 0.15012382, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="Overlay Menu" type="Control" unique_id=1873247851]
 process_mode = 3
 layout_mode = 3
@@ -62,9 +85,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -163.0
+offset_left = 364.0
 offset_top = 90.0
-offset_right = 163.0
+offset_right = 690.0
 offset_bottom = 169.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.9843137, 0.9490196, 0.21176471, 1)
@@ -118,3 +141,46 @@ offset_top = -32.0
 offset_right = 194.0
 offset_bottom = -16.0
 bus_name = "SFX"
+
+[node name="Level Reset" type="Button" parent="." unique_id=248094385]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 230.0
+offset_top = 412.0
+offset_right = 512.0
+offset_bottom = 452.0
+grow_horizontal = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_rvp5i")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("4_k4cl4")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qxhfm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_61u7w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h3d8o")
+text = "Rest Level"
+
+[node name="Back" type="Button" parent="." unique_id=785111768]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 532.0
+offset_top = 412.0
+offset_right = 814.0
+offset_bottom = 452.0
+grow_horizontal = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_rvp5i")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("4_k4cl4")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qxhfm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_61u7w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h3d8o")
+text = "New Game"
+
+[connection signal="pressed" from="Level Reset" to="." method="_on_level_reset_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
