@@ -3,6 +3,9 @@ extends RigidBody2D
 var shot_allowed : bool = true
 var recoil : int = 20
 signal shot_fired
+var shoot_anim_ended : bool = true
+
+@onready var _animated_sprite = $Sprite_Animation
 
 @onready var collider: CollisionPolygon2D = $Collider
 
@@ -18,6 +21,8 @@ var shot_count: int = 0
 @onready var muzzle_flash: AnimatedSprite2D = $"Muzzle Flash"
 
 func _physics_process(delta: float) -> void:
+	if shoot_anim_ended == true:
+		_animated_sprite.play("idle")
 	
 	angular_damp = 2
 	if abs(angular_velocity) > 10:
@@ -28,11 +33,15 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_pressed("Rotate Right"):
 		angular_velocity = 8
+	
 			
 	if shot_allowed == true and not animation_player.is_playing():
 		
 		if Input.is_action_just_pressed("Shoot"):
+			shoot_anim_ended = false
+			#_animated_sprite.stop()
 			shot_allowed = false
+			_animated_sprite.play("shoot")
 			shot_fired.emit() # emit a signal to say a shot was fired
 			linear_velocity = Vector2(0,0)
 			var pos = muzzle.transform[2] # Get Muzzle Position
@@ -63,4 +72,8 @@ func shoot():
 	muzzle_flash.play("default")
 	animation_player.play("Pistol Shot")
 	
-	
+
+
+func _on_sprite_animation_animation_finished() -> void:
+	if _animated_sprite.animation == "shoot":
+		shoot_anim_ended = true
