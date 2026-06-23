@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://km8mt26palfb"]
 
 [ext_resource type="PackedScene" uid="uid://8wucsy1likjy" path="res://Assets/Scenes/Bullets/bullet_handler.tscn" id="1_81xjb"]
+[ext_resource type="PackedScene" uid="uid://cr1k8oodxgsnm" path="res://Assets/Scenes/player.tscn" id="2_5m5in"]
 [ext_resource type="PackedScene" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="3_81xjb"]
 [ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="3_e4x0h"]
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="4_5e7qr"]
@@ -24,3 +25,5 @@ shape = SubResource("RectangleShape2D_5e7qr")
 
 [node name="Camera" parent="." unique_id=1696142273 instance=ExtResource("4_5e7qr")]
 position = Vector2(0, 26)
+
+[node name="Player" parent="." unique_id=2103491096 instance=ExtResource("2_5m5in")]
