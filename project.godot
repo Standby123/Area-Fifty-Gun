@@ -42,6 +42,15 @@ Menu={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Bullets"
+2d_physics/layer_3="World"
+2d_physics/layer_4="Level Changer"
+2d_physics/layer_5="Breakable"
+2d_physics/layer_6="Shards"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
