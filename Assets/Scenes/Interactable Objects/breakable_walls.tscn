@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://m7t8b3uvasvy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vl6a"]
+resource_local_to_scene = true
+size = Vector2(107, 85.5)
+
+[node name="BreakableWalls" type="Node2D" unique_id=62945943]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=367199100]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1313702620]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1615889048]
+position = Vector2(-10.5, 37.25)
+shape = SubResource("RectangleShape2D_0vl6a")
