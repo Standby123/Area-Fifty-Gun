@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://bxv0npkpevdw5"]
+
+[ext_resource type="Script" uid="uid://cm1rvul07q1bw" path="res://Assets/Scripts/shotto_controller.gd" id="1_uv1b3"]
+[ext_resource type="Texture2D" uid="uid://dmhpnvyw3v7uw" path="res://Assets/Sprites/shottoStatic.png" id="2_3tlmh"]
+[ext_resource type="AudioStream" uid="uid://csxrnl246vext" path="res://Assets/Audio/SFX/bitcrushed_shotgun.mp3" id="4_3tlmh"]
+[ext_resource type="Texture2D" uid="uid://cbkv8rmdsqjrg" path="res://Assets/Sprites/Direction_Marker.png" id="4_iyvks"]
+[ext_resource type="PackedScene" uid="uid://8wucsy1likjy" path="res://Assets/Scenes/Bullets/bullet_handler.tscn" id="6_uv1b3"]
+[ext_resource type="Texture2D" uid="uid://caofbighrc1ni" path="res://Assets/Sprites/Animtion Frames/pistol_muzzle_flare_big_2.png" id="6_vsvqm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv1b3"]
+atlas = ExtResource("2_3tlmh")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug634"]
+atlas = ExtResource("2_3tlmh")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_38rej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uv1b3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug634")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23lac"]
+atlas = ExtResource("6_vsvqm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3t24"]
+atlas = ExtResource("6_vsvqm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3tg1"]
+atlas = ExtResource("6_vsvqm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lerqx"]
+atlas = ExtResource("6_vsvqm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp3cw"]
+atlas = ExtResource("6_vsvqm")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecf78"]
+atlas = ExtResource("6_vsvqm")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy5gb"]
+atlas = ExtResource("6_vsvqm")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rsrmw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23lac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3t24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3tg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lerqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp3cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecf78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy5gb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_vy5gb"]
+resource_name = "Muzzle Flash"
+
+[sub_resource type="Animation" id="Animation_23lac"]
+resource_name = "Pistol Shot"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BitcrushedShotgun:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_w3t24"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BitcrushedShotgun:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c3tg1"]
+_data = {
+&"Muzzle Flash": SubResource("Animation_vy5gb"),
+&"Pistol Shot": SubResource("Animation_23lac"),
+&"RESET": SubResource("Animation_w3t24")
+}
+
+[node name="Shotto" type="RigidBody2D" unique_id=2103491096]
+mass = 0.08
+gravity_scale = 0.7
+script = ExtResource("1_uv1b3")
+
+[node name="Collider" type="CollisionPolygon2D" parent="." unique_id=1687368870]
+polygon = PackedVector2Array(-30, -2, -8, -7, 31, -4, 31, -1, 26, 4, -9, 5, -30, 7)
+
+[node name="Sprite_Animation" type="AnimatedSprite2D" parent="." unique_id=2096437787]
+sprite_frames = SubResource("SpriteFrames_38rej")
+animation = &"shoot"
+
+[node name="Muzzle" type="RayCast2D" parent="." unique_id=1319957381]
+position = Vector2(30, -2)
+rotation = -1.5707964
+target_position = Vector2(-9.536743e-07, 15)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2109974461]
+position = Vector2(37, -2.0000002)
+scale = Vector2(2.9, 1)
+texture = ExtResource("4_iyvks")
+
+[node name="Timer" type="Timer" parent="." unique_id=1173540308]
+wait_time = 0.8
+autostart = true
+
+[node name="BitcrushedShotgun" type="AudioStreamPlayer" parent="." unique_id=1509344210]
+stream = ExtResource("4_3tlmh")
+
+[node name="Muzzle Flash" type="AnimatedSprite2D" parent="." unique_id=721133820]
+visible = false
+position = Vector2(15, -5)
+sprite_frames = SubResource("SpriteFrames_rsrmw")
+speed_scale = 10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=902916855]
+libraries/ = SubResource("AnimationLibrary_c3tg1")
+
+[node name="Bullet Handler" parent="." unique_id=1287969283 instance=ExtResource("6_uv1b3")]
+
+[connection signal="animation_finished" from="Sprite_Animation" to="." method="_on_sprite_animation_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

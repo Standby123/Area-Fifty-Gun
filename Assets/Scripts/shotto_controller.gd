@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 var shot_allowed : bool = true
-var recoil : int = 20
+var recoil : int = 35
 signal shot_fired
 var shoot_anim_ended : bool = true
 
@@ -12,10 +12,10 @@ var shoot_anim_ended : bool = true
 @onready var muzzle: Node2D = $Muzzle
 
 # Bullet and Entity
-const BULLET = preload("res://Assets/Scenes/Bullets/bullet.tscn")
+const BULLET = preload("res://Assets/Scenes/Bullets/pellet.tscn")
 var shot_count: int = 0
-@onready var bullet_handler: Node = %"Bullet Handler"
-
+@onready var bullet_handler: Node = $"Bullet Handler"
+var num_pellets: int = 10
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var muzzle_flash: AnimatedSprite2D = $"Muzzle Flash"
@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	if shoot_anim_ended == true:
 		_animated_sprite.play("idle")
 	
-	angular_damp = 2
+	angular_damp = 2.5
 	if abs(angular_velocity) > 10:
 		angular_velocity *= 0.7
 	
@@ -59,18 +59,18 @@ func _on_timer_timeout() -> void:
 	shot_allowed = true # Replace with function body.
 
 func shoot():
-	shot_count += 1
-	
-	var new_bullet = BULLET.instantiate()
-	new_bullet.position = muzzle.global_position
-	new_bullet.angle = muzzle.global_rotation
-	new_bullet.name = "Bullet " + str(shot_count)
-	bullet_handler.add_child(new_bullet)
-	bullet_handler.Clear_Bullets(shot_count)
-	
-	muzzle_flash.visible = true
-	muzzle_flash.play("default")
-	animation_player.play("Pistol Shot")
+	for p in num_pellets:
+		shot_count += 1
+		var new_bullet = BULLET.instantiate()
+		new_bullet.position = muzzle.global_position
+		new_bullet.angle = muzzle.global_rotation
+		new_bullet.name = "Bullet " + str(shot_count)
+		bullet_handler.add_child(new_bullet)
+		bullet_handler.Clear_Bullets(shot_count)
+		
+		muzzle_flash.visible = true
+		muzzle_flash.play("default")
+		animation_player.play("Pistol Shot")
 	
 
 

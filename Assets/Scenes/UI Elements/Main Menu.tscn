@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://c72ql7kjnvo40" path="res://Assets/Fonts/BlockCraft.otf" id="5_cdq8x"]
 [ext_resource type="FontFile" uid="uid://dvu4ovbpd6tb0" path="res://Assets/Fonts/BoldsPixels.ttf" id="6_cd8vj"]
 [ext_resource type="PackedScene" uid="uid://cr1k8oodxgsnm" path="res://Assets/Scenes/player.tscn" id="7_escwx"]
-[ext_resource type="PackedScene" uid="uid://8wucsy1likjy" path="res://Assets/Scenes/bullet_handler.tscn" id="8_36tx0"]
+[ext_resource type="PackedScene" uid="uid://8wucsy1likjy" path="res://Assets/Scenes/Bullets/bullet_handler.tscn" id="8_36tx0"]
 [ext_resource type="AudioStream" uid="uid://bllo5cwlfh0l4" path="res://Assets/Audio/Music/very serious2.mp3" id="9_r6ogh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pddk7"]

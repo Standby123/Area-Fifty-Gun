@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://esmwqfm6bh8e"]
+
+[ext_resource type="Script" uid="uid://c23quupo6d1op" path="res://Assets/Scripts/pellet.gd" id="1_ry42q"]
+[ext_resource type="Texture2D" uid="uid://cllr5xuntnkom" path="res://Assets/Sprites/pellet.png" id="2_ry42q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ry04a"]
+radius = 2.0
+
+[node name="Bullet" type="RigidBody2D" unique_id=1075435794]
+rotation = -1.5707964
+collision_layer = 2
+collision_mask = 3
+mass = 0.01
+script = ExtResource("1_ry42q")
+
+[node name="Bullet_collider" type="CollisionShape2D" parent="." unique_id=743700470]
+shape = SubResource("CircleShape2D_ry04a")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1682588710]
+texture = ExtResource("2_ry42q")
