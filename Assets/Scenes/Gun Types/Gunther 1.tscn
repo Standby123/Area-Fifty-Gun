@@ -218,6 +218,7 @@ _data = {
 }
 
 [node name="Gunther" type="RigidBody2D" unique_id=2103491096]
+collision_mask = 15
 mass = 0.05
 gravity_scale = 0.7
 script = ExtResource("1_u1yyb")
