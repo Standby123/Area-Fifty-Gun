@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dqsw1602spgg7"]
+
+[ext_resource type="Script" uid="uid://d2fcgaovclgid" path="res://Assets/Scenes/shard_emitter.gd" id="1_fwnll"]
+
+[node name="ShardEmitter" type="Node2D" unique_id=1389048350]
+script = ExtResource("1_fwnll")
+nbr_of_shards = 50
+
+[node name="DeleteTimer" type="Timer" parent="." unique_id=1275027273]
+
+[connection signal="timeout" from="DeleteTimer" to="." method="_on_delete_timer_timeout"]

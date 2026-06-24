@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b32fm07shg50d"]
+
+[node name="Shard" type="RigidBody2D" unique_id=1123897937]
+collision_layer = 32
+collision_mask = 0
+mass = 0.2
+gravity_scale = 0.7
+freeze = true
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=397709803]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1961344162]
+disabled = true

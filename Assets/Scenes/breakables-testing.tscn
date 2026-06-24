@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://najkkvir0ud3"]
+[gd_scene format=4 uid="uid://cn8bo3kx6dmto"]
 
 [ext_resource type="PackedScene" path="res://Assets/Scenes/bullet_handler.tscn" id="1_5qhsq"]
 [ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="2_05wxt"]
@@ -12,7 +12,7 @@ size = Vector2(170, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rn1w6"]
 resource_local_to_scene = true
-size = Vector2(139.5, 24)
+size = Vector2(32, 32)
 
 [node name="Main2" type="Node2D" unique_id=2099700060]
 
@@ -31,15 +31,21 @@ position = Vector2(0, 26)
 [node name="Level End Area" parent="." unique_id=746342500 instance=ExtResource("5_ua2eb")]
 position = Vector2(-578, -104)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level End Area" unique_id=642454673]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level End Area" unique_id=642454673]
 position = Vector2(181, 8)
 shape = SubResource("RectangleShape2D_5e7qr")
 
 [node name="BreakableWalls" parent="." unique_id=62945943 instance=ExtResource("6_rn1w6")]
-position = Vector2(118, -57)
+position = Vector2(141, -44)
 
-[node name="CollisionShape2D" parent="BreakableWalls/Sprite2D/StaticBody2D" parent_id_path=PackedInt32Array(62945943, 1313702620) index="0" unique_id=1615889048]
-position = Vector2(73.25, -83)
+[node name="Sprite2D" parent="BreakableWalls" index="0" unique_id=367199100]
+position = Vector2(59.5, 0)
+scale = Vector2(4.71875, 1)
+
+[node name="CollisionShape2D" parent="BreakableWalls/Sprite2D/Area2D" parent_id_path=PackedInt32Array(62945943, 1556567046) index="0" unique_id=1615889048]
+shape = SubResource("RectangleShape2D_rn1w6")
+
+[node name="CollisionShape2D" parent="BreakableWalls/Sprite2D/StaticBody2D" parent_id_path=PackedInt32Array(62945943, 1454760533) index="0" unique_id=314182929]
 shape = SubResource("RectangleShape2D_rn1w6")
 
 [connection signal="shot_fired" from="Player" to="Camera" method="_on_player_shot_fired"]

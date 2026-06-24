@@ -26,7 +26,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
-
 	if collision:
 		num_col += 1
 		var reflect = collision.get_remainder().bounce(collision.get_normal())
