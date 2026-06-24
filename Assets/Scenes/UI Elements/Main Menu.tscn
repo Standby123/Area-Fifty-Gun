@@ -303,7 +303,6 @@ bus = &"Music"
 
 [node name="Player Handler" parent="." unique_id=551140747 instance=ExtResource("8_7anqe")]
 position = Vector2(545, 486)
-gun_index = 2
 
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="New Game" to="." method="_on_new_game_pressed"]

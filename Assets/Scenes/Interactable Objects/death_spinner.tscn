@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cnokvmknckpa6"]
+
+[ext_resource type="Texture2D" uid="uid://demo2lk24rh2y" path="res://Assets/Sprites/Ase_and_unfinished/Death Blades.png" id="1_tlhij"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mhry"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq1ct"]
+atlas = ExtResource("1_tlhij")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qta6"]
+atlas = ExtResource("1_tlhij")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bc2r"]
+atlas = ExtResource("1_tlhij")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vyod"]
+atlas = ExtResource("1_tlhij")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_335p3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq1ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qta6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bc2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vyod")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Death Spinner" type="Area2D" unique_id=1429448666]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1316449744]
+shape = SubResource("RectangleShape2D_3mhry")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1775120323]
+sprite_frames = SubResource("SpriteFrames_335p3")
+autoplay = "default"
