@@ -9,11 +9,23 @@ extends RayCast2D
 @onready var collision_particles: GPUParticles2D = $"Collision Particles"
 @onready var cast_particles: GPUParticles2D = $"Cast Particles"
 
+# Timer
+var indefinite: bool = false
+@export var wake_time := 3
+@export var sleep_time := 3
+
 func  _ready() -> void:
 	set_colour(colour)
 	set_is_casting(is_casting)
 
 func _physics_process(delta: float) -> void:
+	if indefinite:
+		main_thread(delta)
+		
+	else:
+		pass
+		
+func main_thread(delta):
 	target_position.x = move_toward(
 		target_position.x,
 		max_length,
@@ -30,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	var laser_start_pos := laser_look.points[0]
 	beam_particles.position = laser_start_pos + (laser_end_pos - laser_start_pos)*0.5
 	beam_particles.process_material.emission_box_extents.x = laser_end_pos.distance_to(laser_start_pos) *0.5
-	
+
 @export var is_casting: bool = false: set = set_is_casting
 
 func set_is_casting(new_value):
@@ -71,11 +83,16 @@ func set_colour(new_colour: Color) -> void:
 var tween: Tween = null
 
 func appear() -> void:
+	
 	laser_look.visible = true
 	if tween and tween.is_running():
 		tween.kill()
 	tween = create_tween()
 	tween.tween_property(laser_look, "width", line_width, growth_time * 2.0).from(0.0)
+	
+	collision_particles.visible = true
+	beam_particles.visible = true
+	cast_particles.visible = true
 	
 func disappear() -> void:
 	if tween and tween.is_running():
@@ -83,3 +100,7 @@ func disappear() -> void:
 	tween = create_tween()
 	tween.tween_property(laser_look, "width", 0.0, growth_time).from_current()
 	tween.tween_callback(laser_look.hide)
+	
+	collision_particles.visible = false
+	beam_particles.visible = false
+	cast_particles.visible = false
