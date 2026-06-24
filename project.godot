@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Area Fifty Gun"
-run/main_scene="uid://dwlxohmcd7pni"
+run/main_scene="uid://km8mt26palfb"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -48,6 +48,8 @@ Menu={
 2d_physics/layer_2="Bullets"
 2d_physics/layer_3="World"
 2d_physics/layer_4="Level Changer"
+2d_physics/layer_5="Breakable"
+2d_physics/layer_6="Shards"
 
 [physics]
 

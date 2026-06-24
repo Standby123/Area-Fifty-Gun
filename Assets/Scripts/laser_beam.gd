@@ -1,4 +1,3 @@
-@tool
 extends RayCast2D
 
 @export var max_length: float = 1000
@@ -10,20 +9,38 @@ extends RayCast2D
 @onready var cast_particles: GPUParticles2D = $"Cast Particles"
 
 # Timer
-var indefinite: bool = false
+@export var indefinite: bool = false
 @export var wake_time := 3
-@export var sleep_time := 3
+@onready var sleep_timer: Timer = $"Sleep Time"
+var visibility: bool = true
+var sleep_time
+
+var elapsed_time :float = 0
 
 func  _ready() -> void:
+	
 	set_colour(colour)
 	set_is_casting(is_casting)
 
 func _physics_process(delta: float) -> void:
-	if indefinite:
-		main_thread(delta)
+	main_thread(delta)
+	
+	if not indefinite:
+		if elapsed_time >= wake_time:
+			disappear()
+			visibility = false
+			elapsed_time = 0.0
 		
-	else:
-		pass
+		if not visibility:
+			#sleep_timer.start()
+			sleep_time = sleep_timer.wait_time
+			await get_tree().create_timer(sleep_time).timeout
+			#sleep_timer.stop()
+			appear()
+			visibility = true
+			elapsed_time = 0.0
+			
+		elapsed_time += delta
 		
 func main_thread(delta):
 	target_position.x = move_toward(
@@ -42,6 +59,8 @@ func main_thread(delta):
 	var laser_start_pos := laser_look.points[0]
 	beam_particles.position = laser_start_pos + (laser_end_pos - laser_start_pos)*0.5
 	beam_particles.process_material.emission_box_extents.x = laser_end_pos.distance_to(laser_start_pos) *0.5
+
+	
 
 @export var is_casting: bool = false: set = set_is_casting
 
