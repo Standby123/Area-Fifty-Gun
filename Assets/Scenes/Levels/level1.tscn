@@ -1,54 +1,16 @@
 [gd_scene format=4 uid="uid://km8mt26palfb"]
 
-[ext_resource type="PackedScene" uid="uid://dwfb8j57oxlpo" path="res://Assets/Scenes/Interactable Objects/laser_beam.tscn" id="2_lujl0"]
 [ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="3_81xjb"]
 [ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="3_e4x0h"]
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="4_5e7qr"]
 [ext_resource type="PackedScene" uid="uid://c4f7fhfteoaj0" path="res://Assets/Scenes/player_handler.tscn" id="4_81xjb"]
-[ext_resource type="PackedScene" uid="uid://cnokvmknckpa6" path="res://Assets/Scenes/Interactable Objects/death_spinner.tscn" id="5_81xjb"]
+[ext_resource type="PackedScene" path="res://Assets/Scenes/Interactable Objects/death_spinner.tscn" id="5_81xjb"]
+[ext_resource type="PackedScene" path="res://Assets/Scenes/Interactable Objects/Laser Cannon.tscn" id="6_lujl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5e7qr"]
 size = Vector2(170, 60)
 
-[sub_resource type="Animation" id="Animation_lujl0"]
-resource_name = "Laser Rotate"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [1.0471976, 2.0943952, 1.0471976]
-}
-
-[sub_resource type="Animation" id="Animation_xl6hu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0471976]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oqagj"]
-_data = {
-&"Laser Rotate": SubResource("Animation_lujl0"),
-&"RESET": SubResource("Animation_xl6hu")
-}
-
-[node name="Main2" type="Node2D" unique_id=2099700060]
+[node name="Main3" type="Node2D" unique_id=2099700060]
 
 [node name="Death Spinner" parent="." unique_id=1429448666 instance=ExtResource("5_81xjb")]
 position = Vector2(-24, 89)
@@ -68,14 +30,5 @@ position = Vector2(0, 26)
 [node name="Player Handler" parent="." unique_id=551140747 instance=ExtResource("4_81xjb")]
 position = Vector2(240, 22)
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1034570182]
-position = Vector2(127, -126)
-rotation = 1.0471976
-
-[node name="Laser Beam" parent="Node2D" unique_id=1951467181 instance=ExtResource("2_lujl0")]
-target_position = Vector2(1000, 0)
-collision_mask = 255
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=749218464]
-libraries/ = SubResource("AnimationLibrary_oqagj")
-autoplay = &"Laser Rotate"
+[node name="Ceiling Mount" parent="." unique_id=1413967785 instance=ExtResource("6_lujl0")]
+position = Vector2(65, -120)
