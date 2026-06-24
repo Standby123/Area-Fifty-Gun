@@ -133,7 +133,7 @@ _data = {
 }
 
 [node name="Shotto" type="RigidBody2D" unique_id=2103491096]
-collision_mask = 15
+collision_mask = 31
 mass = 0.08
 gravity_scale = 0.7
 script = ExtResource("1_uv1b3")

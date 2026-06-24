@@ -26,7 +26,6 @@ shape = SubResource("RectangleShape2D_0vl6a")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1454760533]
 collision_layer = 16
-collision_mask = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=314182929]
 shape = SubResource("RectangleShape2D_0vl6a")
