@@ -14,7 +14,7 @@ var shoot_anim_ended : bool = true
 # Bullet and Entity
 const BULLET = preload("res://Assets/Scenes/Bullets/bullet.tscn")
 var shot_count: int = 0
-@onready var bullet_handler: Node = %"Bullet Handler"
+@onready var bullet_handler: Node = $"Bullet Handler"
 
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -65,6 +65,7 @@ func shoot():
 	new_bullet.position = muzzle.global_position
 	new_bullet.angle = muzzle.global_rotation
 	new_bullet.name = "Bullet " + str(shot_count)
+	
 	bullet_handler.add_child(new_bullet)
 	bullet_handler.Clear_Bullets(shot_count)
 	

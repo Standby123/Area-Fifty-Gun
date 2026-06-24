@@ -1,66 +1,67 @@
-[gd_scene format=3 uid="uid://cr1k8oodxgsnm"]
+[gd_scene format=3 uid="uid://cclcy78n32ig1"]
 
-[ext_resource type="Script" uid="uid://dyfs1hwdfsjqi" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
-[ext_resource type="Texture2D" uid="uid://cylyv4h6rog8t" path="res://Assets/Sprites/Animtion Frames/gunther_idle.png" id="2_w3t24"]
-[ext_resource type="Texture2D" uid="uid://cbkv8rmdsqjrg" path="res://Assets/Sprites/Direction_Marker.png" id="3_38rej"]
-[ext_resource type="Texture2D" uid="uid://cvfhdxyo83dny" path="res://Assets/Sprites/Animtion Frames/gunther_fire_anim.png" id="3_c3tg1"]
-[ext_resource type="AudioStream" uid="uid://b4guxi5vxu3a1" path="res://Assets/Audio/SFX/bitcrushed_pistol1.mp3" id="4_t1xgp"]
-[ext_resource type="Texture2D" uid="uid://caofbighrc1ni" path="res://Assets/Sprites/Animtion Frames/pistol_muzzle_flare_big_2.png" id="6_w3t24"]
+[ext_resource type="Script" uid="uid://cb7l1aloffqg1" path="res://Assets/Scripts/gunther_controller.gd" id="1_u1yyb"]
+[ext_resource type="Texture2D" uid="uid://cylyv4h6rog8t" path="res://Assets/Sprites/Animtion Frames/gunther_idle.png" id="2_2v1bi"]
+[ext_resource type="Texture2D" uid="uid://cvfhdxyo83dny" path="res://Assets/Sprites/Animtion Frames/gunther_fire_anim.png" id="3_26xq6"]
+[ext_resource type="Texture2D" uid="uid://cbkv8rmdsqjrg" path="res://Assets/Sprites/Direction_Marker.png" id="4_uqhyd"]
+[ext_resource type="AudioStream" uid="uid://b4guxi5vxu3a1" path="res://Assets/Audio/SFX/bitcrushed_pistol1.mp3" id="5_v2s2b"]
+[ext_resource type="Texture2D" uid="uid://caofbighrc1ni" path="res://Assets/Sprites/Animtion Frames/pistol_muzzle_flare_big_2.png" id="6_xkm7j"]
+[ext_resource type="PackedScene" uid="uid://8wucsy1likjy" path="res://Assets/Scenes/Bullets/bullet_handler.tscn" id="7_g1ei2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsrmw"]
-atlas = ExtResource("2_w3t24")
+atlas = ExtResource("2_2v1bi")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o8kuu"]
-atlas = ExtResource("2_w3t24")
+atlas = ExtResource("2_2v1bi")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xv74q"]
-atlas = ExtResource("2_w3t24")
+atlas = ExtResource("2_2v1bi")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qq7w"]
-atlas = ExtResource("2_w3t24")
+atlas = ExtResource("2_2v1bi")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tcr7l"]
-atlas = ExtResource("2_w3t24")
+atlas = ExtResource("2_2v1bi")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yrbh7"]
-atlas = ExtResource("2_w3t24")
+atlas = ExtResource("2_2v1bi")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aq5fl"]
-atlas = ExtResource("2_w3t24")
+atlas = ExtResource("2_2v1bi")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xka8r"]
-atlas = ExtResource("2_w3t24")
+atlas = ExtResource("2_2v1bi")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ncqey"]
-atlas = ExtResource("3_c3tg1")
+atlas = ExtResource("3_26xq6")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnw5g"]
-atlas = ExtResource("3_c3tg1")
+atlas = ExtResource("3_26xq6")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dsi02"]
-atlas = ExtResource("3_c3tg1")
+atlas = ExtResource("3_26xq6")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eprmk"]
-atlas = ExtResource("3_c3tg1")
+atlas = ExtResource("3_26xq6")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ytees"]
-atlas = ExtResource("3_c3tg1")
+atlas = ExtResource("3_26xq6")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nqho8"]
-atlas = ExtResource("3_c3tg1")
+atlas = ExtResource("3_26xq6")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_38rej"]
@@ -119,31 +120,31 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_23lac"]
-atlas = ExtResource("6_w3t24")
+atlas = ExtResource("6_xkm7j")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3t24"]
-atlas = ExtResource("6_w3t24")
+atlas = ExtResource("6_xkm7j")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c3tg1"]
-atlas = ExtResource("6_w3t24")
+atlas = ExtResource("6_xkm7j")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lerqx"]
-atlas = ExtResource("6_w3t24")
+atlas = ExtResource("6_xkm7j")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jp3cw"]
-atlas = ExtResource("6_w3t24")
+atlas = ExtResource("6_xkm7j")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecf78"]
-atlas = ExtResource("6_w3t24")
+atlas = ExtResource("6_xkm7j")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vy5gb"]
-atlas = ExtResource("6_w3t24")
+atlas = ExtResource("6_xkm7j")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rsrmw"]
@@ -216,11 +217,11 @@ _data = {
 &"RESET": SubResource("Animation_w3t24")
 }
 
-[node name="Player" type="RigidBody2D" unique_id=2103491096]
+[node name="Gunther" type="RigidBody2D" unique_id=2103491096]
 collision_mask = 15
 mass = 0.05
 gravity_scale = 0.7
-script = ExtResource("1_7dd06")
+script = ExtResource("1_u1yyb")
 
 [node name="Collider" type="CollisionPolygon2D" parent="." unique_id=1687368870]
 polygon = PackedVector2Array(-14, 12, -14, -7, 14, -7, 14, -2, -7, -2, -7, 13, -13, 13)
@@ -237,14 +238,14 @@ target_position = Vector2(-9.536743e-07, 15)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2109974461]
 position = Vector2(21.75, -5)
 scale = Vector2(2.9, 1)
-texture = ExtResource("3_38rej")
+texture = ExtResource("4_uqhyd")
 
 [node name="Timer" type="Timer" parent="." unique_id=1173540308]
 wait_time = 0.4
 autostart = true
 
 [node name="BitcrushedPistol1" type="AudioStreamPlayer" parent="." unique_id=1809177000]
-stream = ExtResource("4_t1xgp")
+stream = ExtResource("5_v2s2b")
 bus = &"SFX"
 
 [node name="Muzzle Flash" type="AnimatedSprite2D" parent="." unique_id=721133820]
@@ -255,6 +256,8 @@ speed_scale = 10.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=902916855]
 libraries/ = SubResource("AnimationLibrary_c3tg1")
+
+[node name="Bullet Handler" parent="." unique_id=1287969283 instance=ExtResource("7_g1ei2")]
 
 [connection signal="animation_finished" from="Sprite_Animation" to="." method="_on_sprite_animation_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
