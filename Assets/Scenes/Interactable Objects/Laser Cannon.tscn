@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://cmih5s5lj3lkr"]
+
+[ext_resource type="Texture2D" uid="uid://c5vxetk5uuk5o" path="res://Assets/Sprites/Particle Effects/Ceiling Mount.png" id="1_o7gc0"]
+[ext_resource type="Texture2D" uid="uid://brs1ryws77p8f" path="res://Assets/Sprites/Particle Effects/Laser Cannon Extension.png" id="2_1sph6"]
+[ext_resource type="Script" uid="uid://cg04m6m5togsy" path="res://Assets/Scenes/Interactable Objects/laser_cannon.gd" id="2_yny31"]
+[ext_resource type="Texture2D" uid="uid://yg8pliaatdsv" path="res://Assets/Sprites/Particle Effects/Laser Cannon Animation.png" id="3_yny31"]
+[ext_resource type="PackedScene" uid="uid://dwfb8j57oxlpo" path="res://Assets/Scenes/Interactable Objects/laser_beam.tscn" id="4_suhk6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rctu6"]
+atlas = ExtResource("3_yny31")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqoe6"]
+atlas = ExtResource("3_yny31")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5281y"]
+atlas = ExtResource("3_yny31")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se4wk"]
+atlas = ExtResource("3_yny31")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy2qh"]
+atlas = ExtResource("3_yny31")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l2jd"]
+atlas = ExtResource("3_yny31")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70en2"]
+atlas = ExtResource("3_yny31")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vs1q"]
+atlas = ExtResource("3_yny31")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leota"]
+atlas = ExtResource("3_yny31")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cikf3"]
+atlas = ExtResource("3_yny31")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_souv4"]
+atlas = ExtResource("3_yny31")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfk44"]
+atlas = ExtResource("3_yny31")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdcxj"]
+atlas = ExtResource("3_yny31")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0udh"]
+atlas = ExtResource("3_yny31")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oi1p2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rctu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqoe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5281y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se4wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xy2qh")
+}],
+"loop": false,
+"name": &"charging",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l2jd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70en2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vs1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leota")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cikf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_souv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfk44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdcxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0udh")
+}],
+"loop": true,
+"name": &"firing",
+"speed": 20.0
+}]
+
+[node name="Ceiling Mount" type="Sprite2D" unique_id=1413967785]
+position = Vector2(584, 0)
+texture = ExtResource("1_o7gc0")
+script = ExtResource("2_yny31")
+is_casting = true
+colour = Color(0, 1, 0, 1)
+Sweep = true
+
+[node name="Laser Extension" type="Sprite2D" parent="." unique_id=96319766]
+show_behind_parent = true
+texture = ExtResource("2_1sph6")
+
+[node name="Laser Cannon" type="AnimatedSprite2D" parent="Laser Extension" unique_id=2002257451]
+position = Vector2(0, 16)
+sprite_frames = SubResource("SpriteFrames_oi1p2")
+animation = &"firing"
+frame = 2
+frame_progress = 0.13054664
+
+[node name="Laser Beam" parent="Laser Extension/Laser Cannon" unique_id=1951467181 instance=ExtResource("4_suhk6")]
+show_behind_parent = true
+position = Vector2(0, 8)
+rotation = 1.5707964
+is_casting = true
+growth_time = 1.0
