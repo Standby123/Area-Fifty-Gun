@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" path="res://Assets/Scenes/Interactable Objects/death_spinner.tscn" id="5_81xjb"]
 [ext_resource type="PackedScene" path="res://Assets/Scenes/Interactable Objects/Laser Cannon.tscn" id="6_lujl0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5e7qr"]
-size = Vector2(170, 60)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lujl0"]
+resource_local_to_scene = true
+size = Vector2(135, 72)
 
 [node name="Main3" type="Node2D" unique_id=2099700060]
 
@@ -20,9 +21,9 @@ tile_map_data = PackedByteArray("AAD2/wUAAQABAAIAAAD3/wUAAQABAAIAAAD4/wUAAQABAAI
 
 [node name="Level End Area" parent="." unique_id=746342500 instance=ExtResource("3_81xjb")]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level End Area" unique_id=642454673]
-position = Vector2(-375, -96)
-shape = SubResource("RectangleShape2D_5e7qr")
+[node name="CollisionShape2D" parent="Level End Area" index="0" unique_id=176094685]
+position = Vector2(-273.5, -96)
+shape = SubResource("RectangleShape2D_lujl0")
 
 [node name="Camera" parent="." unique_id=1696142273 instance=ExtResource("4_5e7qr")]
 position = Vector2(0, 26)
@@ -32,3 +33,5 @@ position = Vector2(240, 22)
 
 [node name="Ceiling Mount" parent="." unique_id=1413967785 instance=ExtResource("6_lujl0")]
 position = Vector2(65, -120)
+
+[editable path="Level End Area"]
