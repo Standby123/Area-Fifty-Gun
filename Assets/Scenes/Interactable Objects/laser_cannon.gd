@@ -12,8 +12,8 @@ extends Sprite2D
 
 # Laser Settings
 @export var Indefinite_Time := true ##
-@export var Active_Time := 10 ##
-@export var Inactive_Time := 10 ##
+@export var Active_Time := 10.0 ##
+@export var Inactive_Time := 10.0 ##
 
 # Nodes
 @onready var laser_extension: Sprite2D = $"Laser Extension"
@@ -37,17 +37,18 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+var time_passed := 0.0
 func _process(delta: float) -> void:
+	
 	if laser_beam.visibility:
 		laser_cannon.play("firing")
 		
-	
-		
-	elif not laser_beam.visibility:
-		laser_cannon.play("default")
-		
-	elif not laser_beam.visibility and (sleep_time.wait_time - sleep_time.time_left) < 0.1:
+	elif not laser_beam.visibility and laser_beam.charge:
 		laser_cannon.play("charging")
 		
-	elif not laser_beam.visibility and sleep_time.time_left < 0.1:
+	elif not laser_beam.visibility and laser_beam.reverse_charge:
 		laser_cannon.play_backwards("charging")
+
+	elif not laser_beam.visibility and laser_beam.power_off:
+			laser_cannon.play("default")
+			

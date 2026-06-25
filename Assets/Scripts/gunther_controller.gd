@@ -52,7 +52,6 @@ func _physics_process(delta: float) -> void:
 			
 			# Create Bullet
 			shoot()
-			
 
 func _on_timer_timeout() -> void:
 	# allow another shot after cooldown times out
@@ -72,9 +71,10 @@ func shoot():
 	muzzle_flash.visible = true
 	muzzle_flash.play("default")
 	animation_player.play("Pistol Shot")
-	
-
 
 func _on_sprite_animation_animation_finished() -> void:
 	if _animated_sprite.animation == "shoot":
 		shoot_anim_ended = true
+
+func death():
+	queue_free()

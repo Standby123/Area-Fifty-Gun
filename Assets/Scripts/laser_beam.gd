@@ -1,5 +1,7 @@
 extends RayCast2D
 
+# Player Collision Level
+
 @export var max_length: float = 1000
 @export var speed: float = 3000
 
@@ -16,6 +18,12 @@ var visibility: bool = true
 var sleep_time
 
 var elapsed_time :float = 0
+var charge: bool = false
+var reverse_charge: bool = false
+var power_off: bool = false
+
+# Gun Names
+var gun_names: Array = ["Gunther", "Shotto"]
 
 func  _ready() -> void:
 	
@@ -28,15 +36,32 @@ func _physics_process(delta: float) -> void:
 	if not indefinite:
 		if elapsed_time >= wake_time:
 			disappear()
+			set_collision_mask_value(1, false)
 			visibility = false
 			elapsed_time = 0.0
 		
 		if not visibility:
 			#sleep_timer.start()
 			sleep_time = sleep_timer.wait_time
-			await get_tree().create_timer(sleep_time).timeout
+			
+			# Power Down
+			reverse_charge = true
+			await get_tree().create_timer(1, true, true).timeout
+			reverse_charge = false
+			
+			# Power Off
+			power_off = true
+			await get_tree().create_timer(sleep_time, true, true).timeout
+			power_off = false
 			#sleep_timer.stop()
+			
+			# Power On
+			charge = true
+			await  get_tree().create_timer(1, true, true).timeout
+			charge = false
+			
 			appear()
+			set_collision_mask_value(1, true)
 			visibility = true
 			elapsed_time = 0.0
 			
@@ -53,6 +78,10 @@ func main_thread(delta):
 	force_raycast_update() #Up to date collision data
 	if is_colliding():
 		laser_end_pos = to_local(get_collision_point())
+		for gun in gun_names:
+			if gun == str(get_collider().name):
+				get_collider().death()
+	
 	laser_look.points[1] = laser_end_pos
 	collision_particles.position = laser_end_pos
 	
@@ -107,7 +136,7 @@ func appear() -> void:
 	if tween and tween.is_running():
 		tween.kill()
 	tween = create_tween()
-	tween.tween_property(laser_look, "width", line_width, growth_time * 2.0).from(0.0)
+	tween.tween_property(laser_look, "width", line_width, growth_time).from(0.0)
 	
 	collision_particles.visible = true
 	beam_particles.visible = true
