@@ -20,6 +20,8 @@ var num_pellets: int = 10
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var muzzle_flash: AnimatedSprite2D = $"Muzzle Flash"
 
+
+
 func _physics_process(delta: float) -> void:
 	if shoot_anim_ended == true:
 		_animated_sprite.play("idle")
@@ -77,3 +79,7 @@ func shoot():
 func _on_sprite_animation_animation_finished() -> void:
 	if _animated_sprite.animation == "shoot":
 		shoot_anim_ended = true
+
+func death():
+	queue_free()
+	IsAlive.alive = false

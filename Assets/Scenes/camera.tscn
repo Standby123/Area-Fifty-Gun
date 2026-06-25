@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bnl2snl43hpin"]
 
 [ext_resource type="PackedScene" uid="uid://dvjnif2gqdr1y" path="res://Assets/Scenes/UI Elements/settings_overlay.tscn" id="1_djjcv"]
+[ext_resource type="PackedScene" uid="uid://b5l8enqvea10c" path="res://Assets/Scenes/UI Elements/Respawn Overlay.tscn" id="2_1ds61"]
 
 [sub_resource type="GDScript" id="GDScript_ddlpd"]
 script/source = "extends Camera2D
@@ -38,6 +39,7 @@ func _process(delta):
 	if Input.is_action_pressed(\"Shoot\"):
 		add_trauma(0.5)
 		
+		
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
 		shake()
@@ -64,3 +66,5 @@ offset_left = -220.0
 offset_top = -115.0
 offset_right = -220.0
 offset_bottom = -115.0
+
+[node name="Respawn Overlan" parent="." unique_id=1142510184 instance=ExtResource("2_1ds61")]

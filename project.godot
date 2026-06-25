@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://dciog4ogs4003"
 [autoload]
 
 MusicPlayer="*uid://c3e0fpddpgm3g"
+IsAlive="*uid://co6sooh28rqg0"
 
 [global_group]
 

@@ -6,23 +6,18 @@ func _ready() -> void:
 	visible = false
 	animation_player.stop()
 	
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		if visible:
-			visible = false
-			animation_player.stop()
-			get_tree().paused = false
-			
-		else:
-			visible = true
-			animation_player.play("Write Text")
-			get_tree().paused = true
-			
-
+var count: int = 0
+func _process(delta: float) -> void:
+	if not IsAlive.alive and count == 0:
+		visible = true
+		animation_player.play("Respawn Text")
+		get_tree().paused = true
+		count += 1
 
 
 func _on_level_reset_pressed() -> void:
 	get_tree().change_scene_to_file.call_deferred(get_tree().current_scene.scene_file_path)
+	IsAlive.alive = true
 	visible = false
 	animation_player.stop()
 	get_tree().paused = false

@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://b5l8enqvea10c"]
+
+[ext_resource type="Script" uid="uid://chsvvvd7825sw" path="res://Assets/Scripts/respawn_overlay.gd" id="1_c1jfx"]
+[ext_resource type="FontFile" uid="uid://dvu4ovbpd6tb0" path="res://Assets/Fonts/BoldsPixels.ttf" id="2_piw7d"]
+[ext_resource type="FontFile" uid="uid://c72ql7kjnvo40" path="res://Assets/Fonts/BlockCraft.otf" id="3_rhbd3"]
+
+[sub_resource type="Animation" id="Animation_c1jfx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_a6a5f"]
+resource_name = "Respawn Text"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "Y", "Yo", "You", "You ", "You D", "You Di", "You Die", "You Died", "You Died!"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_piw7d"]
+_data = {
+&"RESET": SubResource("Animation_c1jfx"),
+&"Respawn Text": SubResource("Animation_a6a5f")
+}
+
+[sub_resource type="Theme" id="Theme_rvp5i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxhfm"]
+bg_color = Color(0.08627451, 0.08627451, 0.08627451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61u7w"]
+bg_color = Color(0.2574758, 0.25747576, 0.25747573, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3d8o"]
+bg_color = Color(0.15012382, 0.15012382, 0.15012382, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Overlay Menu" type="Control" unique_id=1873247851]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -162.0
+offset_right = -288.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_c1jfx")
+
+[node name="Settings Text" type="Label" parent="." unique_id=618053424]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 432.0
+offset_top = 90.0
+offset_right = 758.0
+offset_bottom = 169.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.9843137, 0.9490196, 0.21176471, 1)
+theme_override_fonts/font = ExtResource("2_piw7d")
+theme_override_font_sizes/font_size = 90
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Settings Text" unique_id=1662311772]
+libraries/ = SubResource("AnimationLibrary_piw7d")
+
+[node name="Level Reset" type="Button" parent="." unique_id=248094385]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 452.0
+offset_top = 270.0
+offset_right = 734.0
+offset_bottom = 310.0
+grow_horizontal = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_rvp5i")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_rhbd3")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qxhfm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_61u7w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h3d8o")
+text = "Rest Level"
+
+[node name="Back" type="Button" parent="." unique_id=785111768]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 458.0
+offset_top = 346.0
+offset_right = 740.0
+offset_bottom = 386.0
+grow_horizontal = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_rvp5i")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_rhbd3")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qxhfm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_61u7w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h3d8o")
+text = "Main Menu"
+
+[connection signal="pressed" from="Level Reset" to="." method="_on_level_reset_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
