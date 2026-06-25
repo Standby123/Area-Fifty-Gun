@@ -11,13 +11,21 @@ config_version=5
 [application]
 
 config/name="Area Fifty Gun"
-run/main_scene="uid://km8mt26palfb"
+run/main_scene="uid://dwlxohmcd7pni"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [audio]
 
 buses/default_bus_layout="uid://dciog4ogs4003"
+
+[autoload]
+
+MusicPlayer="*uid://c3e0fpddpgm3g"
+
+[global_group]
+
+Player=""
 
 [input]
 

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://sly2moo4ymno"]
+
+[ext_resource type="AudioStream" uid="uid://bllo5cwlfh0l4" path="res://Assets/Audio/Music/very serious2.mp3" id="1_5snj2"]
+
+[node name="Intro Music" type="AudioStreamPlayer" unique_id=860239743]
+stream = ExtResource("1_5snj2")
+autoplay = true
+bus = &"Music"
