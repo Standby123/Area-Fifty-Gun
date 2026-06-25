@@ -4,8 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="3_e4x0h"]
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="4_5e7qr"]
 [ext_resource type="PackedScene" uid="uid://c4f7fhfteoaj0" path="res://Assets/Scenes/player_handler.tscn" id="4_81xjb"]
-[ext_resource type="PackedScene" path="res://Assets/Scenes/Interactable Objects/death_spinner.tscn" id="5_81xjb"]
-[ext_resource type="PackedScene" uid="uid://de7f4eq7lqa85" path="res://Assets/Scenes/Interactable Objects/Laser Cannon.tscn" id="6_lujl0"]
+[ext_resource type="PackedScene" uid="uid://cnokvmknckpa6" path="res://Assets/Scenes/Interactable Objects/death_spinner.tscn" id="5_81xjb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5e7qr"]
 size = Vector2(170, 60)
@@ -29,11 +28,3 @@ position = Vector2(0, 26)
 
 [node name="Player Handler" parent="." unique_id=551140747 instance=ExtResource("4_81xjb")]
 position = Vector2(240, 22)
-
-[node name="Ceiling Mount" parent="." unique_id=1413967785 instance=ExtResource("6_lujl0")]
-position = Vector2(135, -120)
-colour = Color(1, 1, 1, 1)
-Low_Angle = -30
-Indefinite_Time = false
-Active_Time = 5
-Inactive_Time = 2
