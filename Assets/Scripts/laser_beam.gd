@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 			power_off = false
 			#sleep_timer.stop()
 			
-			# Power On
+ 			# Power On
 			charge = true
 			
 			await  get_tree().create_timer(1, true, true).timeout

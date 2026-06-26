@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://by80cwgh1457e"]
 
-[node name="GameMusic" type="Node2D" unique_id=1430191983]
+[ext_resource type="AudioStream" uid="uid://u2pjg7j5ppbv" path="res://Assets/Audio/Music/Game music.mp3" id="1_lport"]
+
+[node name="GameMusic" type="AudioStreamPlayer" unique_id=1216941458]
+process_mode = 3
+stream = ExtResource("1_lport")
+bus = &"Music"
+parameters/looping = true

@@ -1,16 +1,20 @@
 [gd_scene format=4 uid="uid://cbm445bxo3w65"]
 
+[ext_resource type="PackedScene" uid="uid://c2mfkm3fnt25o" path="res://Assets/Sprites/Backgrounds/cinderblock_bg_4.tscn" id="1_q4gtk"]
 [ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="2_q4gtk"]
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="3_ed4nf"]
 [ext_resource type="PackedScene" uid="uid://c4f7fhfteoaj0" path="res://Assets/Scenes/player_handler.tscn" id="4_77e1n"]
 [ext_resource type="PackedScene" uid="uid://m7t8b3uvasvy" path="res://Assets/Scenes/Interactable Objects/breakable_walls.tscn" id="5_cgkq1"]
 [ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="5_e3w5a"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgkq1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ed4nf"]
 resource_local_to_scene = true
 size = Vector2(135, 72)
 
 [node name="Main4" type="Node2D" unique_id=744974072]
+
+[node name="CinderblockBg4" parent="." unique_id=1633832135 instance=ExtResource("1_q4gtk")]
+position = Vector2(1, -25)
 
 [node name="Floor and Walls" parent="." unique_id=1075090486 instance=ExtResource("2_q4gtk")]
 z_index = 1
@@ -25,7 +29,7 @@ scale = Vector2(2.0085683, 2.2426603)
 
 [node name="CollisionShape2D" parent="Level End Area" index="0" unique_id=176094685]
 position = Vector2(-273.5, -96)
-shape = SubResource("RectangleShape2D_cgkq1")
+shape = SubResource("RectangleShape2D_ed4nf")
 
 [node name="Glass Handler" type="Node" parent="." unique_id=1671535694]
 

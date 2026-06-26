@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bigjfgbsd7q7r"]
 
-[ext_resource type="Script" uid="uid://brsw0yjgnap0p" path="res://Assets/Scripts/settings_menu.gd" id="1_wnnou"]
+[ext_resource type="Script" path="res://Assets/Scripts/settings_menu.gd" id="1_wnnou"]
 [ext_resource type="Texture2D" uid="uid://cacjjgsjshdb3" path="res://Assets/Sprites/Ase_and_unfinished/Temp_background.png" id="2_l4xns"]
 [ext_resource type="FontFile" uid="uid://dvu4ovbpd6tb0" path="res://Assets/Fonts/BoldsPixels.ttf" id="3_dtc7m"]
 [ext_resource type="FontFile" uid="uid://c72ql7kjnvo40" path="res://Assets/Fonts/BlockCraft.otf" id="4_6ipxd"]

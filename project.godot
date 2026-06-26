@@ -23,6 +23,8 @@ buses/default_bus_layout="uid://dciog4ogs4003"
 
 MusicPlayer="*uid://c3e0fpddpgm3g"
 IsAlive="*uid://co6sooh28rqg0"
+IntroMusic="*uid://sly2moo4ymno"
+GameMusic="*uid://by80cwgh1457e"
 
 [global_group]
 
@@ -71,3 +73,4 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.25490198, 0.25490198, 0.25490198, 1)

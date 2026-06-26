@@ -160,7 +160,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_qxhfm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_61u7w")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h3d8o")
-text = "Rest Level"
+text = "Reset Level"
 
 [node name="Back" type="Button" parent="." unique_id=785111768]
 layout_mode = 1
