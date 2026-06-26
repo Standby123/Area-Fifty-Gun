@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="2_i4y1f"]
 [ext_resource type="PackedScene" uid="uid://c4f7fhfteoaj0" path="res://Assets/Scenes/player_handler.tscn" id="3_tuvsu"]
 [ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="4_c1uat"]
+[ext_resource type="PackedScene" uid="uid://ddqrnckkc62th" path="res://Assets/Scenes/light.tscn" id="6_tuvsu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4y1f"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1uat"]
 resource_local_to_scene = true
 size = Vector2(135, 72)
 
@@ -171,9 +172,22 @@ scale = Vector2(1, 1.6800019)
 
 [node name="CollisionShape2D" parent="Level End Area" index="0" unique_id=176094685]
 position = Vector2(-273.5, -96)
-shape = SubResource("RectangleShape2D_i4y1f")
+shape = SubResource("RectangleShape2D_c1uat")
 
 [node name="Camera" parent="." unique_id=1696142273 instance=ExtResource("2_i4y1f")]
 position = Vector2(24, 3)
+
+[node name="Light" parent="." unique_id=1389100412 instance=ExtResource("6_tuvsu")]
+position = Vector2(-175, -120)
+
+[node name="Light2" parent="." unique_id=956085051 instance=ExtResource("6_tuvsu")]
+position = Vector2(-35, -122)
+can_break = true
+
+[node name="Light3" parent="." unique_id=823995759 instance=ExtResource("6_tuvsu")]
+position = Vector2(143, -120)
+
+[node name="Light4" parent="." unique_id=1499351794 instance=ExtResource("6_tuvsu")]
+position = Vector2(298, -120)
 
 [editable path="Level End Area"]

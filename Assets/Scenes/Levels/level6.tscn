@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cmih5s5lj3lkr" path="res://Assets/Scenes/Interactable Objects/Laser Cannon.tscn" id="5_6l7de"]
 [ext_resource type="PackedScene" uid="uid://m7t8b3uvasvy" path="res://Assets/Scenes/Interactable Objects/breakable_walls.tscn" id="5_nv1jn"]
 [ext_resource type="PackedScene" uid="uid://cnokvmknckpa6" path="res://Assets/Scenes/Interactable Objects/death_spinner.tscn" id="6_8v8a2"]
+[ext_resource type="PackedScene" uid="uid://ddqrnckkc62th" path="res://Assets/Scenes/light.tscn" id="8_ow27p"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8v8a2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l7de"]
 resource_local_to_scene = true
 size = Vector2(135, 72)
 
@@ -31,7 +32,7 @@ scale = Vector2(2.0085683, 2.2426603)
 
 [node name="CollisionShape2D" parent="Level End Area" index="0" unique_id=176094685]
 position = Vector2(-273.5, -96)
-shape = SubResource("RectangleShape2D_8v8a2")
+shape = SubResource("RectangleShape2D_6l7de")
 
 [node name="Glass Handler" type="Node" parent="." unique_id=1690368958]
 
@@ -103,5 +104,17 @@ position = Vector2(-69, 152)
 position = Vector2(-3, -88)
 Low_Angle = -30
 Duration = 5
+
+[node name="Light" parent="." unique_id=1389100412 instance=ExtResource("8_ow27p")]
+position = Vector2(-224, -89)
+
+[node name="Light2" parent="." unique_id=1817005493 instance=ExtResource("8_ow27p")]
+position = Vector2(-81, -89)
+
+[node name="Light3" parent="." unique_id=1880130968 instance=ExtResource("8_ow27p")]
+position = Vector2(60, -90)
+
+[node name="Light4" parent="." unique_id=254510991 instance=ExtResource("8_ow27p")]
+position = Vector2(229, -88)
 
 [editable path="Level End Area"]
