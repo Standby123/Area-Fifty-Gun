@@ -23,6 +23,8 @@ func _on_level_reset_pressed() -> void:
 	get_tree().paused = false
 
 func _on_back_pressed() -> void:
+	GameMusic.playing = false
+	IntroMusic.playing = true
 	get_tree().change_scene_to_file.call_deferred("res://Assets/Scenes/UI Elements/Main Menu.tscn")
 	visible = false
 	animation_player.stop()

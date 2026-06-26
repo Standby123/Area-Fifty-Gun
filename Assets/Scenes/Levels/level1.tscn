@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c4f7fhfteoaj0" path="res://Assets/Scenes/player_handler.tscn" id="4_81xjb"]
 [ext_resource type="PackedScene" uid="uid://ddqrnckkc62th" path="res://Assets/Scenes/light.tscn" id="5_81xjb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_81xjb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lujl0"]
 resource_local_to_scene = true
 size = Vector2(84, 72)
 
@@ -23,7 +23,7 @@ tile_map_data = PackedByteArray("AAD2/wUAAQABAAIAAAD3/wUAAQABAAIAAAD4/wUAAQABAAI
 
 [node name="CollisionShape2D" parent="Level End Area" index="0" unique_id=176094685]
 position = Vector2(-369, -96)
-shape = SubResource("RectangleShape2D_81xjb")
+shape = SubResource("RectangleShape2D_lujl0")
 
 [node name="Camera" parent="." unique_id=1696142273 instance=ExtResource("4_5e7qr")]
 position = Vector2(0, 26)
