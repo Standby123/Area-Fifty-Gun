@@ -100,4 +100,4 @@ func death():
 		IsAlive.alive = false
 
 func _on_acid_detector_body_entered(body: Node2D) -> void:
-	print(body)
+	death()

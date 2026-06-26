@@ -685,7 +685,7 @@ volume_db = -7.285
 bus = &"SFX"
 
 [node name="Acid Detector" type="Area2D" parent="." unique_id=849540063]
-collision_mask = 128
+collision_mask = 64
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Acid Detector" unique_id=1088654292]
 position = Vector2(0, 2.5)
