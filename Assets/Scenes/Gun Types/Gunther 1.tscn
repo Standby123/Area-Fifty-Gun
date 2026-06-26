@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cb7l1aloffqg1" path="res://Assets/Scripts/gunther_controller.gd" id="1_u1yyb"]
 [ext_resource type="Texture2D" uid="uid://cylyv4h6rog8t" path="res://Assets/Sprites/Animtion Frames/gunther_idle.png" id="2_2v1bi"]
+[ext_resource type="Texture2D" uid="uid://bajr00hv6ajyh" path="res://Assets/Sprites/Animtion Frames/explosion_death_anim1_old.png" id="2_ej5lp"]
 [ext_resource type="Texture2D" uid="uid://cvfhdxyo83dny" path="res://Assets/Sprites/Animtion Frames/gunther_fire_anim.png" id="3_26xq6"]
 [ext_resource type="Texture2D" uid="uid://cbkv8rmdsqjrg" path="res://Assets/Sprites/Direction_Marker.png" id="4_uqhyd"]
 [ext_resource type="AudioStream" uid="uid://b4guxi5vxu3a1" path="res://Assets/Audio/SFX/bitcrushed_pistol1.mp3" id="5_v2s2b"]
@@ -17,6 +18,50 @@
 [ext_resource type="AudioStream" uid="uid://vp37me8vai11" path="res://Assets/Audio/SFX/glass_clinking/glass_clinking1.mp3" id="15_538g2"]
 [ext_resource type="AudioStream" uid="uid://mqdpxm133i1x" path="res://Assets/Audio/SFX/glass_clinking/glass_clinking2.mp3" id="16_66b0l"]
 [ext_resource type="AudioStream" uid="uid://du8ldpwbrtlay" path="res://Assets/Audio/SFX/glass_clinking/glass_clinking3.mp3" id="17_cm81w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq8yo"]
+atlas = ExtResource("2_ej5lp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yrgq"]
+atlas = ExtResource("2_ej5lp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i1og"]
+atlas = ExtResource("2_ej5lp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3we6g"]
+atlas = ExtResource("2_ej5lp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi608"]
+atlas = ExtResource("2_ej5lp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_538g2"]
+atlas = ExtResource("2_ej5lp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66b0l"]
+atlas = ExtResource("2_ej5lp")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm81w"]
+atlas = ExtResource("2_ej5lp")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvc77"]
+atlas = ExtResource("2_ej5lp")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f46bd"]
+atlas = ExtResource("2_ej5lp")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch40o"]
+atlas = ExtResource("2_ej5lp")
+region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsrmw"]
 atlas = ExtResource("2_2v1bi")
@@ -76,6 +121,44 @@ region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_38rej"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq8yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yrgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i1og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3we6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xi608")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_538g2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66b0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cm81w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvc77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f46bd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ch40o")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rsrmw")
@@ -512,7 +595,9 @@ polygon = PackedVector2Array(-14, 12, -14, -7, 14, -7, 14, -2, -7, -2, -7, 13, -
 
 [node name="Sprite_Animation" type="AnimatedSprite2D" parent="." unique_id=2096437787]
 sprite_frames = SubResource("SpriteFrames_38rej")
-animation = &"idle"
+animation = &"shoot"
+frame = 5
+frame_progress = 1.0
 
 [node name="Muzzle" type="RayCast2D" parent="." unique_id=1319957381]
 position = Vector2(14, -5)
@@ -533,7 +618,6 @@ stream = ExtResource("5_v2s2b")
 bus = &"SFX"
 
 [node name="Muzzle Flash" type="AnimatedSprite2D" parent="." unique_id=721133820]
-visible = false
 position = Vector2(15, -5)
 sprite_frames = SubResource("SpriteFrames_rsrmw")
 speed_scale = 10.0

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cm1rvul07q1bw" path="res://Assets/Scripts/shotto_controller.gd" id="1_uv1b3"]
 [ext_resource type="Texture2D" uid="uid://dmhpnvyw3v7uw" path="res://Assets/Sprites/shottoStatic.png" id="2_3tlmh"]
+[ext_resource type="Texture2D" uid="uid://bajr00hv6ajyh" path="res://Assets/Sprites/Animtion Frames/explosion_death_anim1_old.png" id="2_182j2"]
 [ext_resource type="Texture2D" uid="uid://bdm3ou8t7624i" path="res://Assets/Sprites/Animtion Frames/shotto_idle.png" id="3_qjvh7"]
 [ext_resource type="AudioStream" uid="uid://csxrnl246vext" path="res://Assets/Audio/SFX/bitcrushed_shotgun.mp3" id="4_3tlmh"]
 [ext_resource type="Texture2D" uid="uid://dmm0i807e3gq6" path="res://Assets/Sprites/Animtion Frames/shotto_fire.png" id="4_852ha"]
@@ -18,6 +19,50 @@
 [ext_resource type="AudioStream" uid="uid://vp37me8vai11" path="res://Assets/Audio/SFX/glass_clinking/glass_clinking1.mp3" id="16_5bae3"]
 [ext_resource type="AudioStream" uid="uid://mqdpxm133i1x" path="res://Assets/Audio/SFX/glass_clinking/glass_clinking2.mp3" id="17_bw367"]
 [ext_resource type="AudioStream" uid="uid://du8ldpwbrtlay" path="res://Assets/Audio/SFX/glass_clinking/glass_clinking3.mp3" id="18_4mdan"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucump"]
+atlas = ExtResource("2_182j2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71uxo"]
+atlas = ExtResource("2_182j2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h876q"]
+atlas = ExtResource("2_182j2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snury"]
+atlas = ExtResource("2_182j2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bahr2"]
+atlas = ExtResource("2_182j2")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plj7p"]
+atlas = ExtResource("2_182j2")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83euu"]
+atlas = ExtResource("2_182j2")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66glx"]
+atlas = ExtResource("2_182j2")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0cij"]
+atlas = ExtResource("2_182j2")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81qej"]
+atlas = ExtResource("2_182j2")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlure"]
+atlas = ExtResource("2_182j2")
+region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uv1b3"]
 atlas = ExtResource("2_3tlmh")
@@ -85,6 +130,44 @@ region = Rect2(192, 0, 64, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_38rej"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucump")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71uxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h876q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snury")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bahr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plj7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83euu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66glx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0cij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81qej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlure")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uv1b3")
@@ -527,7 +610,7 @@ polygon = PackedVector2Array(-30, -2, -8, -7, 31, -4, 31, -1, 26, 4, -9, 5, -30,
 
 [node name="Sprite_Animation" type="AnimatedSprite2D" parent="." unique_id=2096437787]
 sprite_frames = SubResource("SpriteFrames_38rej")
-animation = &"shoot"
+animation = &"explode"
 
 [node name="Muzzle" type="RayCast2D" parent="." unique_id=1319957381]
 position = Vector2(30, -2)

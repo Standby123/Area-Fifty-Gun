@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Area Fifty Gun"
-run/main_scene="uid://cn2bncm5rbkbf"
+run/main_scene="uid://dct63qnfovefy"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

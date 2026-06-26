@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://bl0syc0ufgyl"]
+[gd_scene format=3 uid="uid://dct63qnfovefy"]
 
-[ext_resource type="Texture2D" uid="uid://c4834xpmiydfg" path="res://Assets/Sprites/Ase_and_unfinished/opening_cutscene/frame1.png" id="1_curps"]
-[ext_resource type="Script" path="res://Assets/Scenes/start_game.gd" id="2_by0e5"]
-[ext_resource type="Texture2D" uid="uid://ck4q1k3u12yv3" path="res://Assets/Sprites/Ase_and_unfinished/opening_cutscene/frame2.png" id="2_nt6wv"]
-[ext_resource type="AudioStream" uid="uid://b1urhtdcualjs" path="res://Assets/Audio/Music/intro_cutscene.mp3" id="2_pe3cm"]
-[ext_resource type="Texture2D" uid="uid://c4m5nirp35dxm" path="res://Assets/Sprites/Ase_and_unfinished/opening_cutscene/frame3.png" id="3_by0e5"]
+[ext_resource type="Texture2D" uid="uid://c4834xpmiydfg" path="res://Assets/Sprites/Ase_and_unfinished/opening_cutscene/frame1.png" id="1_bohow"]
+[ext_resource type="Script" uid="uid://xeqts6xbcqs3" path="res://Assets/Scenes/start_game.gd" id="2_82v5c"]
+[ext_resource type="Texture2D" uid="uid://ck4q1k3u12yv3" path="res://Assets/Sprites/Ase_and_unfinished/opening_cutscene/frame2.png" id="3_x8ti2"]
+[ext_resource type="Texture2D" uid="uid://c4m5nirp35dxm" path="res://Assets/Sprites/Ase_and_unfinished/opening_cutscene/frame3.png" id="4_eceuh"]
+[ext_resource type="AudioStream" uid="uid://b1urhtdcualjs" path="res://Assets/Audio/Music/intro_cutscene.mp3" id="5_iap54"]
 
 [sub_resource type="Animation" id="Animation_t3wr0"]
 length = 0.001
@@ -42,7 +42,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_curps")]
+"values": [ExtResource("1_bohow")]
 }
 
 [sub_resource type="Animation" id="Animation_ci5wj"]
@@ -82,7 +82,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 4.0333333, 8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("1_curps"), ExtResource("2_nt6wv"), ExtResource("3_by0e5")]
+"values": [ExtResource("1_bohow"), ExtResource("3_x8ti2"), ExtResource("4_eceuh")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gal3x"]
@@ -92,15 +92,15 @@ _data = {
 }
 
 [node name="IntroCutscene" type="Sprite2D" unique_id=406717471]
-texture = ExtResource("1_curps")
-script = ExtResource("2_by0e5")
+texture = ExtResource("1_bohow")
+script = ExtResource("2_82v5c")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1534643675]
 libraries/ = SubResource("AnimationLibrary_gal3x")
 autoplay = &"intro_cutscene"
 
 [node name="CutsceneMusic" type="AudioStreamPlayer2D" parent="." unique_id=837635034]
-stream = ExtResource("2_pe3cm")
+stream = ExtResource("5_iap54")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=336953255]
 zoom = Vector2(7.2, 7.2)

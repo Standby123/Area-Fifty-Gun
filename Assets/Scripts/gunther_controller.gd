@@ -6,6 +6,7 @@ signal shot_fired
 var shoot_anim_ended : bool = true
 
 @onready var _animated_sprite = $Sprite_Animation
+@onready var sprite_animation: AnimatedSprite2D = $Sprite_Animation
 
 @onready var collider: CollisionPolygon2D = $Collider
 
@@ -23,37 +24,38 @@ var shot_count: int = 0
 
 
 func _physics_process(delta: float) -> void:
-	if shoot_anim_ended == true:
-		_animated_sprite.play("idle")
-	
-	angular_damp = 2
-	if abs(angular_velocity) > 10:
-		angular_velocity *= 0.7
-	
-	if Input.is_action_pressed("Rotate Left"):
-		angular_velocity = -6
+	if not died:
+		if shoot_anim_ended == true:
+			_animated_sprite.play("idle")
 		
-	if Input.is_action_pressed("Rotate Right"):
-		angular_velocity = 6
-	
-			
-	if shot_allowed == true and not animation_player.is_playing():
+		angular_damp = 2
+		if abs(angular_velocity) > 10:
+			angular_velocity *= 0.7
 		
-		if Input.is_action_just_pressed("Shoot"):
-			shoot_anim_ended = false
-			#_animated_sprite.stop()
-			shot_allowed = false
-			_animated_sprite.play("shoot")
-			shot_fired.emit() # emit a signal to say a shot was fired
-			linear_velocity = Vector2(0,0)
-			var pos = muzzle.transform[2] # Get Muzzle Position
-			var dir = -1* Vector2(transform.x.x, transform.x.y) # Get direction to shoot
+		if Input.is_action_pressed("Rotate Left"):
+			angular_velocity = -6
 			
-			# Physics Stuff
-			apply_impulse(dir * recoil, pos)
+		if Input.is_action_pressed("Rotate Right"):
+			angular_velocity = 6
+		
+				
+		if shot_allowed == true and not animation_player.is_playing():
 			
-			# Create Bullet
-			shoot()
+			if Input.is_action_just_pressed("Shoot"):
+				shoot_anim_ended = false
+				#_animated_sprite.stop()
+				shot_allowed = false
+				_animated_sprite.play("shoot")
+				shot_fired.emit() # emit a signal to say a shot was fired
+				linear_velocity = Vector2(0,0)
+				var pos = muzzle.transform[2] # Get Muzzle Position
+				var dir = -1* Vector2(transform.x.x, transform.x.y) # Get direction to shoot
+				
+				# Physics Stuff
+				apply_impulse(dir * recoil, pos)
+				
+				# Create Bullet
+				shoot()
 
 func _on_timer_timeout() -> void:
 	# allow another shot after cooldown times out
@@ -74,10 +76,20 @@ func shoot():
 	muzzle_flash.play("default")
 	animation_player.play("Pistol Shot")
 
+var exploded: bool = false
 func _on_sprite_animation_animation_finished() -> void:
 	if _animated_sprite.animation == "shoot":
 		shoot_anim_ended = true
+		
+	if _animated_sprite.animation == "explode":
+		call_respawn()
 
-func death():
+func call_respawn():
 	queue_free()
-	IsAlive.alive = false
+
+var died: bool = false
+func death():
+	if not died:
+		died = true
+		_animated_sprite.play("explode")
+		IsAlive.alive = false
