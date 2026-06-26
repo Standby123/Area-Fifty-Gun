@@ -21,6 +21,9 @@ extends Sprite2D
 @onready var laser_beam: RayCast2D = $"Laser Extension/Laser Cannon/Laser Beam"
 @onready var sleep_time: Timer = $"Laser Extension/Laser Cannon/Laser Beam/Sleep Time"
 
+#Noise
+@onready var noise_player: AnimationPlayer = $"Laser Extension/Laser Cannon/Laser Beam/Noise Player"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	sleep_time.wait_time = Inactive_Time
@@ -31,6 +34,9 @@ func _ready() -> void:
 	laser_beam.wake_time = Active_Time
 	
 	laser_extension.rotation_degrees = Low_Angle
+	
+	if Indefinite_Time:
+		noise_player.play("Noise")
 	if Sweep:
 		laser_extension.start_rotation_loop(Low_Angle, High_Angle, Duration)
 	
@@ -42,6 +48,8 @@ func _process(delta: float) -> void:
 	
 	if laser_beam.visibility:
 		laser_cannon.play("firing")
+		if not noise_player.is_playing():
+			noise_player.play("Noise")
 		
 	elif not laser_beam.visibility and laser_beam.charge:
 		laser_cannon.play("charging")
@@ -51,4 +59,5 @@ func _process(delta: float) -> void:
 
 	elif not laser_beam.visibility and laser_beam.power_off:
 			laser_cannon.play("default")
+			noise_player.stop()
 			
