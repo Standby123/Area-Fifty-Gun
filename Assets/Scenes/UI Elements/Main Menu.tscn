@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://c72ql7kjnvo40" path="res://Assets/Fonts/BlockCraft.otf" id="5_cdq8x"]
 [ext_resource type="FontFile" uid="uid://dvu4ovbpd6tb0" path="res://Assets/Fonts/BoldsPixels.ttf" id="6_cd8vj"]
 [ext_resource type="PackedScene" uid="uid://c4f7fhfteoaj0" path="res://Assets/Scenes/player_handler.tscn" id="8_7anqe"]
+[ext_resource type="PackedScene" uid="uid://ddqrnckkc62th" path="res://Assets/Scenes/light.tscn" id="8_r6ogh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pddk7"]
 texture = ExtResource("2_r6ogh")
@@ -297,6 +298,47 @@ shape = SubResource("RectangleShape2D_pddk7")
 
 [node name="Player Handler" parent="." unique_id=551140747 instance=ExtResource("8_7anqe")]
 position = Vector2(545, 486)
+
+[node name="Light Handler" type="Node" parent="." unique_id=767779811]
+
+[node name="Light" parent="Light Handler" unique_id=1389100412 instance=ExtResource("8_r6ogh")]
+position = Vector2(163, 33)
+
+[node name="Light2" parent="Light Handler" unique_id=787698266 instance=ExtResource("8_r6ogh")]
+position = Vector2(191, 33)
+
+[node name="Light3" parent="Light Handler" unique_id=908207065 instance=ExtResource("8_r6ogh")]
+position = Vector2(226, 33)
+
+[node name="Light4" parent="Light Handler" unique_id=214003153 instance=ExtResource("8_r6ogh")]
+position = Vector2(254, 33)
+can_break = true
+
+[node name="Light9" parent="Light Handler" unique_id=310168937 instance=ExtResource("8_r6ogh")]
+position = Vector2(612, 33)
+
+[node name="Light10" parent="Light Handler" unique_id=1091873322 instance=ExtResource("8_r6ogh")]
+position = Vector2(640, 33)
+
+[node name="Light11" parent="Light Handler" unique_id=843287492 instance=ExtResource("8_r6ogh")]
+position = Vector2(675, 33)
+can_break = true
+
+[node name="Light12" parent="Light Handler" unique_id=727197641 instance=ExtResource("8_r6ogh")]
+position = Vector2(703, 33)
+
+[node name="Light5" parent="Light Handler" unique_id=2015429316 instance=ExtResource("8_r6ogh")]
+position = Vector2(997, 33)
+
+[node name="Light6" parent="Light Handler" unique_id=1521840724 instance=ExtResource("8_r6ogh")]
+position = Vector2(1025, 33)
+can_break = true
+
+[node name="Light7" parent="Light Handler" unique_id=1092810924 instance=ExtResource("8_r6ogh")]
+position = Vector2(1060, 33)
+
+[node name="Light8" parent="Light Handler" unique_id=104778750 instance=ExtResource("8_r6ogh")]
+position = Vector2(1088, 33)
 
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="New Game" to="." method="_on_new_game_pressed"]

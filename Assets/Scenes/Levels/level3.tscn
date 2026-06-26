@@ -1,0 +1,197 @@
+[gd_scene format=4 uid="uid://pkap2mvkrttw"]
+
+[ext_resource type="PackedScene" uid="uid://cnokvmknckpa6" path="res://Assets/Scenes/Interactable Objects/death_spinner.tscn" id="1_i4y1f"]
+[ext_resource type="PackedScene" uid="uid://dho5c7ca58x1f" path="res://Assets/Sprites/Backgrounds/cinderblock_bg_3.tscn" id="1_tuvsu"]
+[ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="1_xcfux"]
+[ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="2_i4y1f"]
+[ext_resource type="PackedScene" uid="uid://c4f7fhfteoaj0" path="res://Assets/Scenes/player_handler.tscn" id="3_tuvsu"]
+[ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="4_c1uat"]
+[ext_resource type="PackedScene" uid="uid://ddqrnckkc62th" path="res://Assets/Scenes/light.tscn" id="6_tuvsu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1uat"]
+resource_local_to_scene = true
+size = Vector2(135, 72)
+
+[node name="Main4" type="Node2D" unique_id=744974072]
+
+[node name="CinderblockBg3" parent="." unique_id=1311855829 instance=ExtResource("1_tuvsu")]
+position = Vector2(14, -3)
+
+[node name="Death Blade Handler" type="Node" parent="." unique_id=1655703630]
+
+[node name="Death Spinner" parent="Death Blade Handler" unique_id=1429448666 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-247, 152)
+
+[node name="Death Spinner2" parent="Death Blade Handler" unique_id=339537391 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-231, 152)
+
+[node name="Death Spinner3" parent="Death Blade Handler" unique_id=284141661 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-215, 152)
+
+[node name="Death Spinner4" parent="Death Blade Handler" unique_id=511908874 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-199, 152)
+
+[node name="Death Spinner5" parent="Death Blade Handler" unique_id=1913675059 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-183, 152)
+
+[node name="Death Spinner6" parent="Death Blade Handler" unique_id=245926529 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-167, 152)
+
+[node name="Death Spinner7" parent="Death Blade Handler" unique_id=1928612686 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-151, 152)
+
+[node name="Death Spinner8" parent="Death Blade Handler" unique_id=589763959 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-135, 152)
+
+[node name="Death Spinner9" parent="Death Blade Handler" unique_id=91164869 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-119, 152)
+
+[node name="Death Spinner10" parent="Death Blade Handler" unique_id=1940013405 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-103, 152)
+
+[node name="Death Spinner11" parent="Death Blade Handler" unique_id=1888634107 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-87, 152)
+
+[node name="Death Spinner12" parent="Death Blade Handler" unique_id=891531394 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-71, 152)
+
+[node name="Death Spinner13" parent="Death Blade Handler" unique_id=1740491657 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-55, 152)
+
+[node name="Death Spinner14" parent="Death Blade Handler" unique_id=362766446 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-39, 152)
+
+[node name="Death Spinner15" parent="Death Blade Handler" unique_id=445074313 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-23, 152)
+
+[node name="Death Spinner16" parent="Death Blade Handler" unique_id=1058541773 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(-7, 152)
+
+[node name="Death Spinner17" parent="Death Blade Handler" unique_id=568797535 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(13, 152)
+
+[node name="Death Spinner18" parent="Death Blade Handler" unique_id=871285052 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(29, 152)
+
+[node name="Death Spinner19" parent="Death Blade Handler" unique_id=351494058 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(45, 152)
+
+[node name="Death Spinner20" parent="Death Blade Handler" unique_id=1796878202 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(61, 152)
+
+[node name="Death Spinner21" parent="Death Blade Handler" unique_id=1492134924 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(77, 152)
+
+[node name="Death Spinner22" parent="Death Blade Handler" unique_id=1621683753 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(93, 152)
+
+[node name="Death Spinner23" parent="Death Blade Handler" unique_id=36679367 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(109, 152)
+
+[node name="Death Spinner24" parent="Death Blade Handler" unique_id=380852116 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(125, 152)
+
+[node name="Death Spinner25" parent="Death Blade Handler" unique_id=425413835 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(141, 152)
+
+[node name="Death Spinner26" parent="Death Blade Handler" unique_id=598134438 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(157, 152)
+
+[node name="Death Spinner27" parent="Death Blade Handler" unique_id=513529879 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(173, 152)
+
+[node name="Death Spinner28" parent="Death Blade Handler" unique_id=1570045670 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(189, 152)
+
+[node name="Death Spinner29" parent="Death Blade Handler" unique_id=146391831 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(205, 152)
+
+[node name="Death Spinner30" parent="Death Blade Handler" unique_id=769060720 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(221, 152)
+
+[node name="Death Spinner31" parent="Death Blade Handler" unique_id=984446311 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(237, 152)
+
+[node name="Death Spinner32" parent="Death Blade Handler" unique_id=895572268 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(253, 152)
+
+[node name="Death Spinner33" parent="Death Blade Handler" unique_id=1815115046 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(271, 152)
+
+[node name="Death Spinner34" parent="Death Blade Handler" unique_id=1784817123 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(287, 152)
+
+[node name="Death Spinner35" parent="Death Blade Handler" unique_id=1748587243 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(303, 152)
+
+[node name="Death Spinner36" parent="Death Blade Handler" unique_id=132333053 instance=ExtResource("1_i4y1f")]
+show_behind_parent = true
+position = Vector2(319, 152)
+
+[node name="Floor and Walls" parent="." unique_id=1075090486 instance=ExtResource("1_xcfux")]
+z_index = 1
+tile_map_data = PackedByteArray("AAAKAAUAAQABAAEAAAAJAAUAAQABAAEAAAAIAAUAAQABAAEAAAAHAAUAAQABAAEAAAAGAAUAAQABAAEAAAAFAAUAAQADAAAAAAAEAAUAAQADAAAAAAADAAUAAQADAAAAAAACAAUAAQABAAEAAAABAAUAAQADAAAAAAAAAAUAAQADAAAAAAD//wUAAQADAAAAAAD+/wUAAQADAAAAAAD9/wUAAQADAAAAAAD8/wUAAQADAAAAAAD7/wUAAQADAAAAAAD6/wUAAQADAAAAAAD5/wUAAQADAAAAAAD4/wUAAQADAAAAAAD3/wUAAQADAAAAAAAKAPv/AQAFAAAAAAD2//v/AQABAAIAAAD3//v/AQAEAAAAAAD4//v/AQABAAMAAAD5//v/AQABAAMAAAD6//v/AQABAAMAAAD7//v/AQABAAMAAAD8//v/AQABAAMAAAD9//v/AQABAAMAAAD+//v/AQAFAAAAAAD///v/AQABAAIAAAAAAPv/AQABAAIAAAABAPv/AQAEAAAAAAACAPv/AQABAAMAAAADAPv/AQABAAMAAAAEAPv/AQAFAAAAAAAHAPv/AQABAAMAAAAIAPv/AQABAAMAAAAJAPv/AQABAAMAAAD2/wUAAQADAAAAAAAGAPv/AQABAAMAAAAFAPv/AQAEAAAAAAD1//z/AQABAAMAAAD1//v/AQABAAIAAAD1//r/AQABAAEAAAD2//r/AQABAAEAAAD3//r/AQABAAEAAAD4//r/AQABAAEAAAD5//r/AQABAAEAAAD6//r/AQABAAEAAAD7//r/AQABAAEAAAD8//r/AQABAAEAAAD9//r/AQABAAEAAAD+//r/AQABAAEAAAD///r/AQABAAEAAAAAAPr/AQABAAEAAAABAPr/AQABAAEAAAACAPr/AQABAAEAAAADAPr/AQABAAEAAAAEAPr/AQABAAEAAAAFAPr/AQABAAEAAAAGAPr/AQABAAEAAAAHAPr/AQABAAEAAAAIAPr/AQABAAEAAAAJAPr/AQABAAEAAAAKAPr/AQABAAEAAAD1/wEAAQADAAIAAAD1/wIAAQADAAIAAAD1/wMAAQADAAIAAAD1/wQAAQADAAIAAAD1/wUAAQADAAIAAAD1/wYAAQABAAMAAAD2/wYAAQABAAMAAAD3/wYAAQABAAMAAAD4/wYAAQABAAMAAAD5/wYAAQABAAMAAAD6/wYAAQABAAMAAAD7/wYAAQABAAMAAAD8/wYAAQABAAMAAAD9/wYAAQABAAMAAAD+/wYAAQABAAMAAAD//wYAAQABAAMAAAAAAAYAAQADAAIAAAABAAYAAQADAAIAAAACAAYAAQADAAIAAAADAAYAAQADAAIAAAAEAAYAAQADAAIAAAAFAAYAAQABAAMAAAAGAAYAAQABAAMAAAAHAAYAAQABAAMAAAAIAAYAAQABAAMAAAAJAAYAAQABAAMAAAAKAAYAAQABAAMAAAALAAYAAQABAAMAAAALAAUAAQABAAEAAAALAPr/AQABAAEAAADz/wAAAQABAAEAAADy/wAAAQABAAEAAADx/wAAAQABAAEAAADw/wAAAQABAAEAAADw/wEAAQABAAIAAADx/wEAAQABAAIAAADy/wEAAQABAAIAAADz/wEAAQABAAIAAAD0/wEAAQABAAIAAAD0/wIAAQABAAIAAADz/wIAAQABAAIAAADy/wIAAQABAAIAAADx/wIAAQABAAIAAADw/wIAAQABAAIAAADv/wIAAQABAAIAAADu/wIAAQAAAAIAAADu/wEAAQAAAAIAAADv/wEAAQABAAIAAADv/wAAAQABAAEAAADu/wAAAQAAAAEAAADy/wMAAQABAAIAAADz/wMAAQABAAIAAAD0/wMAAQABAAIAAAD0/wQAAQABAAIAAAD0/wUAAQABAAIAAAD0/wYAAQABAAMAAADz/wYAAQABAAMAAADy/wYAAQABAAMAAADy/wUAAQABAAIAAADx/wUAAQABAAIAAADx/wQAAQABAAIAAADz/wQAAQABAAIAAADz/wUAAQABAAIAAADx/wYAAQABAAMAAADw/wYAAQABAAMAAADw/wUAAQABAAIAAADv/wUAAQABAAIAAADv/wQAAQABAAIAAADv/wMAAQABAAIAAADu/wMAAQAAAAIAAADu/wQAAQAAAAIAAADu/wUAAQAAAAIAAADu/wYAAQAAAAMAAADv/wYAAQABAAMAAADw/wQAAQABAAIAAADw/wMAAQABAAIAAADx/wMAAQABAAIAAADy/wQAAQABAAIAAAD0//z/AQABAAMAAAD0//v/AQABAAIAAAD0//r/AQABAAEAAADz//z/AQABAAMAAADz//v/AQABAAIAAADz//r/AQABAAEAAADy//z/AQABAAMAAADy//v/AQABAAIAAADy//r/AQABAAEAAADx//z/AQABAAMAAADx//v/AQABAAIAAADx//r/AQABAAEAAADw//z/AQABAAMAAADw//v/AQABAAIAAADw//r/AQABAAEAAADv//z/AQABAAMAAADv//v/AQABAAIAAADv//r/AQABAAEAAADu//z/AQAAAAMAAADu//v/AQAAAAIAAADu//r/AQAAAAEAAAAXAAYAAQACAAMAAAAXAAUAAQACAAEAAAAWAAYAAQABAAMAAAAWAAUAAQABAAEAAAAVAAYAAQABAAMAAAAVAAUAAQAEAAMAAAAUAAYAAQABAAMAAAAUAAUAAQABAAIAAAATAAYAAQABAAMAAAATAAUAAQABAAIAAAASAAYAAQABAAMAAAASAAUAAQABAAIAAAARAAYAAQABAAMAAAARAAUAAQABAAIAAAAQAAYAAQABAAMAAAAQAAUAAQABAAIAAAAPAAYAAQABAAMAAAAPAAUAAQABAAIAAAAOAAYAAQABAAMAAAAOAAUAAQABAAIAAAANAAYAAQABAAMAAAANAAUAAQABAAIAAAAMAAYAAQABAAMAAAAMAAUAAQAFAAEAAAAVAAIAAQACAAIAAAAVAAEAAQACAAIAAAAVAAAAAQACAAIAAAAVAP//AQACAAIAAAAVAP7/AQACAAIAAAAVAP3/AQACAAIAAAAVAPz/AQACAAIAAAAVAPv/AQACAAIAAAAVAPr/AQACAAEAAAAUAAIAAQABAAIAAAAUAAEAAQABAAIAAAAUAAAAAQABAAIAAAAUAP//AQABAAIAAAAUAP7/AQABAAIAAAAUAP3/AQABAAIAAAAUAPz/AQABAAIAAAAUAPv/AQABAAIAAAAUAPr/AQABAAEAAAATAAIAAQABAAIAAAATAAEAAQABAAIAAAATAAAAAQABAAIAAAATAP//AQABAAIAAAATAP7/AQABAAIAAAATAP3/AQABAAIAAAATAPz/AQABAAIAAAATAPv/AQABAAIAAAATAPr/AQABAAEAAAASAAIAAQABAAIAAAASAAEAAQABAAIAAAASAAAAAQABAAIAAAASAP//AQABAAIAAAASAP7/AQABAAIAAAASAP3/AQABAAIAAAASAPz/AQABAAIAAAASAPv/AQABAAIAAAASAPr/AQABAAEAAAARAAIAAQABAAIAAAARAAEAAQABAAIAAAARAAAAAQABAAIAAAARAP//AQABAAIAAAARAP7/AQABAAIAAAARAP3/AQABAAIAAAARAPz/AQABAAIAAAARAPv/AQABAAIAAAARAPr/AQABAAEAAAAQAAIAAQABAAIAAAAQAAEAAQABAAIAAAAQAAAAAQABAAIAAAAQAP//AQABAAIAAAAQAP7/AQABAAIAAAAQAP3/AQABAAIAAAAQAPz/AQABAAIAAAAQAPv/AQABAAIAAAAQAPr/AQABAAEAAAAPAAIAAQABAAIAAAAPAAEAAQABAAIAAAAPAAAAAQABAAIAAAAPAP//AQABAAIAAAAPAP7/AQABAAIAAAAPAP3/AQABAAIAAAAPAPz/AQABAAIAAAAPAPv/AQABAAIAAAAPAPr/AQABAAEAAAAOAAIAAQABAAIAAAAOAAEAAQABAAIAAAAOAAAAAQABAAIAAAAOAP//AQABAAIAAAAOAP7/AQABAAIAAAAOAP3/AQABAAIAAAAOAPz/AQABAAIAAAAOAPv/AQABAAIAAAAOAPr/AQABAAEAAAANAAIAAQABAAIAAAANAAEAAQABAAIAAAANAAAAAQABAAIAAAANAP//AQABAAIAAAANAP7/AQABAAIAAAANAP3/AQABAAIAAAANAPz/AQABAAIAAAANAPv/AQABAAIAAAANAPr/AQABAAEAAAAMAAIAAQAFAAAAAAAMAAEAAQABAAIAAAAMAAAAAQABAAIAAAAMAP//AQABAAIAAAAMAP7/AQABAAIAAAAMAP3/AQABAAIAAAAMAPz/AQABAAIAAAAMAPv/AQABAAIAAAAMAPr/AQABAAEAAAAVAAQAAQACAAIAAAAVAAMAAQACAAIAAAAUAAQAAQABAAIAAAAUAAMAAQABAAIAAAATAAQAAQABAAIAAAATAAMAAQABAAIAAAASAAQAAQABAAIAAAASAAMAAQABAAIAAAARAAQAAQABAAIAAAARAAMAAQABAAIAAAAQAAQAAQABAAIAAAAQAAMAAQABAAIAAAAPAAQAAQABAAIAAAAPAAMAAQABAAIAAAAOAAQAAQABAAIAAAAOAAMAAQABAAIAAAANAAQAAQABAAIAAAANAAMAAQABAAIAAAAMAAQAAQAAAAIAAAAMAAMAAQAAAAIAAAALAPv/AQAEAAAAAAD1/wAAAQADAAAAAAD0/wAAAQADAAAAAAALAAAAAQADAAAAAAAKAAAAAQADAAAAAAAKAAEAAQADAAIAAAAKAAIAAQADAAIAAAAKAAMAAQADAAIAAAAKAAQAAQADAAIAAAALAAEAAQADAAIAAAALAAIAAQADAAIAAAALAAMAAQADAAIAAAALAAQAAQADAAIAAAD2/wAAAQADAAAAAAD3/wAAAQADAAAAAAD2/wEAAQADAAIAAAD3/wEAAQADAAIAAAD3/wIAAQADAAIAAAD3/wMAAQADAAIAAAD2/wMAAQADAAIAAAD3/wQAAQADAAIAAAD2/wQAAQADAAIAAAD2/wIAAQADAAIAAAA=")
+
+[node name="Player Handler" parent="." unique_id=551140747 instance=ExtResource("3_tuvsu")]
+position = Vector2(336, -27)
+
+[node name="Level End Area" parent="." unique_id=746342500 instance=ExtResource("4_c1uat")]
+position = Vector2(-95, 114)
+scale = Vector2(1, 1.6800019)
+
+[node name="CollisionShape2D" parent="Level End Area" index="0" unique_id=176094685]
+position = Vector2(-273.5, -96)
+shape = SubResource("RectangleShape2D_c1uat")
+
+[node name="Camera" parent="." unique_id=1696142273 instance=ExtResource("2_i4y1f")]
+position = Vector2(24, 3)
+
+[node name="Light" parent="." unique_id=1389100412 instance=ExtResource("6_tuvsu")]
+position = Vector2(-175, -120)
+
+[node name="Light2" parent="." unique_id=956085051 instance=ExtResource("6_tuvsu")]
+position = Vector2(-35, -122)
+can_break = true
+
+[node name="Light3" parent="." unique_id=823995759 instance=ExtResource("6_tuvsu")]
+position = Vector2(143, -120)
+
+[node name="Light4" parent="." unique_id=1499351794 instance=ExtResource("6_tuvsu")]
+position = Vector2(298, -120)
+
+[editable path="Level End Area"]

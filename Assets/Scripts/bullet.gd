@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const speed = 500
+const speed = 1500
 
 var angle #Angle in rads
 

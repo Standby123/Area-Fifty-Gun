@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://beky7crsn5k40"]
+
+[ext_resource type="Texture2D" uid="uid://cvew73ivwh35t" path="res://Assets/Sprites/Backgrounds/cinderblock_bg6.png" id="1_jvul2"]
+
+[node name="CinderblockBg6" type="Sprite2D" unique_id=2101184849]
+modulate = Color(0.49411765, 0.49411765, 0.49411765, 1)
+scale = Vector2(0.611, 0.611)
+texture = ExtResource("1_jvul2")

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cnokvmknckpa6"]
 
+[ext_resource type="Script" uid="uid://cc3x8hhb5ev7c" path="res://Assets/Scripts/death_spinner.gd" id="1_3mhry"]
 [ext_resource type="Texture2D" uid="uid://demo2lk24rh2y" path="res://Assets/Sprites/Ase_and_unfinished/Death Blades.png" id="1_tlhij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mhry"]
+size = Vector2(16, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gq1ct"]
 atlas = ExtResource("1_tlhij")
@@ -41,10 +43,15 @@ animations = [{
 }]
 
 [node name="Death Spinner" type="Area2D" unique_id=1429448666]
+collision_layer = 8
+script = ExtResource("1_3mhry")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1316449744]
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_3mhry")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1775120323]
 sprite_frames = SubResource("SpriteFrames_335p3")
 autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

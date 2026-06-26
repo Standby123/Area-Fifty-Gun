@@ -8,6 +8,16 @@
 [ext_resource type="Texture2D" uid="uid://cbkv8rmdsqjrg" path="res://Assets/Sprites/Direction_Marker.png" id="4_iyvks"]
 [ext_resource type="PackedScene" uid="uid://8wucsy1likjy" path="res://Assets/Scenes/Bullets/bullet_handler.tscn" id="6_uv1b3"]
 [ext_resource type="Texture2D" uid="uid://bylsr0867dmos" path="res://Assets/Sprites/Animtion Frames/shotgun_muzzle_flare.png" id="7_qjvh7"]
+[ext_resource type="Script" uid="uid://curosahqh13yq" path="res://Assets/Scripts/noise_interaction.gd" id="9_6exfs"]
+[ext_resource type="AudioStream" uid="uid://ddfnqnk5pnloq" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink1.mp3" id="10_182j2"]
+[ext_resource type="AudioStream" uid="uid://cg0xk2n5elmdi" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink2.mp3" id="11_gmjn6"]
+[ext_resource type="AudioStream" uid="uid://doxcysovugyvv" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink3.mp3" id="12_cupnf"]
+[ext_resource type="AudioStream" uid="uid://bj358hic7u68" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink4.mp3" id="13_hlmqo"]
+[ext_resource type="AudioStream" uid="uid://baolhkccgbx8v" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink5.mp3" id="14_1q6w2"]
+[ext_resource type="AudioStream" uid="uid://dfri4hqg32px4" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink6.mp3" id="15_bwkjr"]
+[ext_resource type="AudioStream" uid="uid://vp37me8vai11" path="res://Assets/Audio/SFX/glass_clinking/glass_clinking1.mp3" id="16_5bae3"]
+[ext_resource type="AudioStream" uid="uid://mqdpxm133i1x" path="res://Assets/Audio/SFX/glass_clinking/glass_clinking2.mp3" id="17_bw367"]
+[ext_resource type="AudioStream" uid="uid://du8ldpwbrtlay" path="res://Assets/Audio/SFX/glass_clinking/glass_clinking3.mp3" id="18_4mdan"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uv1b3"]
 atlas = ExtResource("2_3tlmh")
@@ -232,6 +242,280 @@ _data = {
 &"RESET": SubResource("Animation_w3t24")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fd8e"]
+size = Vector2(63, 16)
+
+[sub_resource type="Animation" id="Animation_f46bd"]
+resource_name = "Glass 3"
+
+[sub_resource type="Animation" id="Animation_ch40o"]
+resource_name = "Glass1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlassClinking1:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_m4vj8"]
+resource_name = "Glass2"
+length = 0.836
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlassClinking2:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6q7hm"]
+resource_name = "Glass3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlassClinking3:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jsgsr"]
+resource_name = "Metal1"
+length = 0.967
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MetallicClink1:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qi1qa"]
+resource_name = "Metal2"
+length = 0.784
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MetallicClink2:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_q6ypb"]
+resource_name = "Metal3"
+length = 0.94
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MetallicClink3:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ocs8d"]
+resource_name = "Metal4"
+length = 0.81
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MetallicClink4:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_mjrdd"]
+resource_name = "Metal5"
+length = 0.81
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MetallicClink5:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_oxbiv"]
+resource_name = "Metal6"
+length = 0.653
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MetallicClink6:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_531tw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MetallicClink1:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MetallicClink2:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MetallicClink3:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MetallicClink4:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MetallicClink5:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MetallicClink6:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GlassClinking1:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GlassClinking2:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GlassClinking3:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_whvhx"]
+_data = {
+&"Glass 3": SubResource("Animation_f46bd"),
+&"Glass1": SubResource("Animation_ch40o"),
+&"Glass2": SubResource("Animation_m4vj8"),
+&"Glass3": SubResource("Animation_6q7hm"),
+&"Metal1": SubResource("Animation_jsgsr"),
+&"Metal2": SubResource("Animation_qi1qa"),
+&"Metal3": SubResource("Animation_q6ypb"),
+&"Metal4": SubResource("Animation_ocs8d"),
+&"Metal5": SubResource("Animation_mjrdd"),
+&"Metal6": SubResource("Animation_oxbiv"),
+&"RESET": SubResource("Animation_531tw")
+}
+
 [node name="Shotto" type="RigidBody2D" unique_id=2103491096]
 collision_mask = 31
 mass = 0.08
@@ -274,5 +558,52 @@ libraries/ = SubResource("AnimationLibrary_c3tg1")
 
 [node name="Bullet Handler" parent="." unique_id=1287969283 instance=ExtResource("6_uv1b3")]
 
+[node name="Noise Interaction" type="Area2D" parent="." unique_id=1666693070]
+script = ExtResource("9_6exfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Noise Interaction" unique_id=508400146]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_5fd8e")
+
+[node name="Clang Player" type="AnimationPlayer" parent="Noise Interaction" unique_id=1510051856]
+libraries/ = SubResource("AnimationLibrary_whvhx")
+
+[node name="MetallicClink1" type="AudioStreamPlayer" parent="Noise Interaction" unique_id=1787311757]
+stream = ExtResource("10_182j2")
+bus = &"SFX"
+
+[node name="MetallicClink2" type="AudioStreamPlayer" parent="Noise Interaction" unique_id=876771752]
+stream = ExtResource("11_gmjn6")
+bus = &"SFX"
+
+[node name="MetallicClink3" type="AudioStreamPlayer" parent="Noise Interaction" unique_id=434752606]
+stream = ExtResource("12_cupnf")
+bus = &"SFX"
+
+[node name="MetallicClink4" type="AudioStreamPlayer" parent="Noise Interaction" unique_id=267071493]
+stream = ExtResource("13_hlmqo")
+bus = &"SFX"
+
+[node name="MetallicClink5" type="AudioStreamPlayer" parent="Noise Interaction" unique_id=2121401153]
+stream = ExtResource("14_1q6w2")
+bus = &"SFX"
+
+[node name="MetallicClink6" type="AudioStreamPlayer" parent="Noise Interaction" unique_id=2091067810]
+stream = ExtResource("15_bwkjr")
+bus = &"SFX"
+
+[node name="GlassClinking1" type="AudioStreamPlayer" parent="Noise Interaction" unique_id=1691896989]
+stream = ExtResource("16_5bae3")
+bus = &"SFX"
+
+[node name="GlassClinking2" type="AudioStreamPlayer" parent="Noise Interaction" unique_id=2115470619]
+stream = ExtResource("17_bw367")
+bus = &"SFX"
+
+[node name="GlassClinking3" type="AudioStreamPlayer" parent="Noise Interaction" unique_id=471728963]
+stream = ExtResource("18_4mdan")
+bus = &"SFX"
+
 [connection signal="animation_finished" from="Sprite_Animation" to="." method="_on_sprite_animation_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Noise Interaction" to="Noise Interaction" method="_on_body_entered"]

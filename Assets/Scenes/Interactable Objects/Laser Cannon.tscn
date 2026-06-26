@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://yg8pliaatdsv" path="res://Assets/Sprites/Particle Effects/Laser Cannon Animation.png" id="3_yny31"]
 [ext_resource type="PackedScene" uid="uid://dwfb8j57oxlpo" path="res://Assets/Scenes/Interactable Objects/laser_beam.tscn" id="4_suhk6"]
 [ext_resource type="Script" uid="uid://cb6e5xwj1xhy3" path="res://Assets/Sprites/laser_rotation.gd" id="4_yny31"]
+[ext_resource type="AudioStream" uid="uid://7nfr0xvvrgex" path="res://Assets/Audio/SFX/constant_laser_drone.mp3" id="7_suhk6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rctu6"]
 atlas = ExtResource("3_yny31")
@@ -123,6 +124,44 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="Animation" id="Animation_rctu6"]
+resource_name = "Noise"
+length = 38.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ConstantLaserDrone:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xqoe6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ConstantLaserDrone:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5281y"]
+_data = {
+&"Noise": SubResource("Animation_rctu6"),
+&"RESET": SubResource("Animation_xqoe6")
+}
+
 [node name="Ceiling Mount" type="Sprite2D" unique_id=1413967785]
 texture = ExtResource("1_o7gc0")
 script = ExtResource("2_yny31")
@@ -148,4 +187,11 @@ position = Vector2(0, 8)
 rotation = 1.5707964
 growth_time = 1.0
 
+[node name="ConstantLaserDrone" type="AudioStreamPlayer" parent="Laser Extension/Laser Cannon/Laser Beam" unique_id=2082321835]
+stream = ExtResource("7_suhk6")
+bus = &"SFX"
+
 [node name="Sleep Time" type="Timer" parent="Laser Extension/Laser Cannon/Laser Beam" unique_id=1985321571]
+
+[node name="Noise Player" type="AnimationPlayer" parent="Laser Extension/Laser Cannon/Laser Beam" unique_id=434217574]
+libraries/ = SubResource("AnimationLibrary_5281y")
