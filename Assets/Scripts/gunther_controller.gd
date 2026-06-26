@@ -16,6 +16,7 @@ const BULLET = preload("res://Assets/Scenes/Bullets/bullet.tscn")
 var shot_count: int = 0
 @onready var bullet_handler: Node = $"Bullet Handler"
 
+@onready var death_player: AnimationPlayer = $"Death Player"
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var muzzle_flash: AnimatedSprite2D = $"Muzzle Flash"
@@ -79,5 +80,8 @@ func _on_sprite_animation_animation_finished() -> void:
 		shoot_anim_ended = true
 
 func death():
+	death_player.play("player_dies")
+	death_player.play("ExplosionSound")
+	death_player.play("WompWomp")
 	queue_free()
 	IsAlive.alive = false
