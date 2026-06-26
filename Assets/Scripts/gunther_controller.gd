@@ -31,10 +31,10 @@ func _physics_process(delta: float) -> void:
 		angular_velocity *= 0.7
 	
 	if Input.is_action_pressed("Rotate Left"):
-		angular_velocity = -8
+		angular_velocity = -6
 		
 	if Input.is_action_pressed("Rotate Right"):
-		angular_velocity = 8
+		angular_velocity = 6
 	
 			
 	if shot_allowed == true and not animation_player.is_playing():
