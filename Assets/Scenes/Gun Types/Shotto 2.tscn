@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cbkv8rmdsqjrg" path="res://Assets/Sprites/Direction_Marker.png" id="4_iyvks"]
 [ext_resource type="PackedScene" uid="uid://8wucsy1likjy" path="res://Assets/Scenes/Bullets/bullet_handler.tscn" id="6_uv1b3"]
 [ext_resource type="Texture2D" uid="uid://bylsr0867dmos" path="res://Assets/Sprites/Animtion Frames/shotgun_muzzle_flare.png" id="7_qjvh7"]
-[ext_resource type="Script" uid="uid://curosahqh13yq" path="res://Assets/Scripts/noise_interaction.gd" id="9_6exfs"]
+[ext_resource type="Script" path="res://Assets/Scripts/noise_interaction.gd" id="9_6exfs"]
 [ext_resource type="AudioStream" uid="uid://ddfnqnk5pnloq" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink1.mp3" id="10_182j2"]
 [ext_resource type="AudioStream" uid="uid://cg0xk2n5elmdi" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink2.mp3" id="11_gmjn6"]
 [ext_resource type="AudioStream" uid="uid://doxcysovugyvv" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink3.mp3" id="12_cupnf"]
@@ -518,8 +518,8 @@ _data = {
 
 [node name="Shotto" type="RigidBody2D" unique_id=2103491096]
 collision_mask = 31
-mass = 0.08
-gravity_scale = 0.7
+mass = 0.06
+gravity_scale = 0.6
 script = ExtResource("1_uv1b3")
 
 [node name="Collider" type="CollisionPolygon2D" parent="." unique_id=1687368870]

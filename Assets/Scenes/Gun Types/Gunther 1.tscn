@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://b4guxi5vxu3a1" path="res://Assets/Audio/SFX/bitcrushed_pistol1.mp3" id="5_v2s2b"]
 [ext_resource type="Texture2D" uid="uid://caofbighrc1ni" path="res://Assets/Sprites/Animtion Frames/pistol_muzzle_flare_big_2.png" id="6_xkm7j"]
 [ext_resource type="PackedScene" uid="uid://8wucsy1likjy" path="res://Assets/Scenes/Bullets/bullet_handler.tscn" id="7_g1ei2"]
-[ext_resource type="Script" uid="uid://curosahqh13yq" path="res://Assets/Scripts/noise_interaction.gd" id="8_6q7hm"]
+[ext_resource type="Script" path="res://Assets/Scripts/noise_interaction.gd" id="8_6q7hm"]
 [ext_resource type="AudioStream" uid="uid://ddfnqnk5pnloq" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink1.mp3" id="9_ej5lp"]
 [ext_resource type="AudioStream" uid="uid://cg0xk2n5elmdi" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink2.mp3" id="10_jq8yo"]
 [ext_resource type="AudioStream" uid="uid://doxcysovugyvv" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink3.mp3" id="11_0yrgq"]
@@ -503,8 +503,8 @@ _data = {
 
 [node name="Gunther" type="RigidBody2D" unique_id=2103491096]
 collision_mask = 159
-mass = 0.05
-gravity_scale = 0.7
+mass = 0.04
+gravity_scale = 0.6
 script = ExtResource("1_u1yyb")
 
 [node name="Collider" type="CollisionPolygon2D" parent="." unique_id=1687368870]

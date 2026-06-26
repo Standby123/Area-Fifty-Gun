@@ -6,8 +6,10 @@ func _ready() -> void:
 
 func _on_new_game_pressed() -> void:
 	get_tree().change_scene_to_file("res://Assets/Scenes/Levels/level1.tscn")
-	IntroMusic.queue_free()
-	GameMusic.play()
+	#IntroMusic.queue_free()
+	#add_child(GameMusic)
+	IntroMusic.playing = false
+	GameMusic.playing = true
 
 func _on_settings_pressed() -> void:
 	get_tree().change_scene_to_file("res://Assets/Scenes/UI Elements/settings_menu.tscn")
