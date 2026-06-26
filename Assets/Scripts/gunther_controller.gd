@@ -22,11 +22,16 @@ var shot_count: int = 0
 @onready var muzzle_flash: AnimatedSprite2D = $"Muzzle Flash"
 
 
+@onready var noise_interaction: Area2D = $"Noise Interaction"
+
+
 
 func _physics_process(delta: float) -> void:
 	if not died:
 		if shoot_anim_ended == true:
 			_animated_sprite.play("idle")
+		
+
 		
 		angular_damp = 2
 		if abs(angular_velocity) > 10:
@@ -93,3 +98,6 @@ func death():
 		died = true
 		_animated_sprite.play("explode")
 		IsAlive.alive = false
+
+func _on_acid_detector_body_entered(body: Node2D) -> void:
+	print(body)

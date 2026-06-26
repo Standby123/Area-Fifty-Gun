@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://b4guxi5vxu3a1" path="res://Assets/Audio/SFX/bitcrushed_pistol1.mp3" id="5_v2s2b"]
 [ext_resource type="Texture2D" uid="uid://caofbighrc1ni" path="res://Assets/Sprites/Animtion Frames/pistol_muzzle_flare_big_2.png" id="6_xkm7j"]
 [ext_resource type="PackedScene" uid="uid://8wucsy1likjy" path="res://Assets/Scenes/Bullets/bullet_handler.tscn" id="7_g1ei2"]
-[ext_resource type="Script" path="res://Assets/Scripts/noise_interaction.gd" id="8_6q7hm"]
+[ext_resource type="Script" uid="uid://curosahqh13yq" path="res://Assets/Scripts/noise_interaction.gd" id="8_6q7hm"]
 [ext_resource type="AudioStream" uid="uid://ddfnqnk5pnloq" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink1.mp3" id="9_ej5lp"]
 [ext_resource type="AudioStream" uid="uid://cg0xk2n5elmdi" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink2.mp3" id="10_jq8yo"]
 [ext_resource type="AudioStream" uid="uid://doxcysovugyvv" path="res://Assets/Audio/SFX/metal_clanging/metallic_clink3.mp3" id="11_0yrgq"]
@@ -628,7 +628,7 @@ libraries/ = SubResource("AnimationLibrary_c3tg1")
 [node name="Bullet Handler" parent="." unique_id=1287969283 instance=ExtResource("7_g1ei2")]
 
 [node name="Noise Interaction" type="Area2D" parent="." unique_id=2017920644]
-collision_mask = 4
+collision_mask = 129
 script = ExtResource("8_6q7hm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Noise Interaction" unique_id=219824409]
@@ -674,7 +674,15 @@ bus = &"SFX"
 stream = ExtResource("17_cm81w")
 bus = &"SFX"
 
+[node name="Acid Detector" type="Area2D" parent="." unique_id=849540063]
+collision_mask = 128
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Acid Detector" unique_id=1088654292]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_hvc77")
+
 [connection signal="animation_finished" from="Sprite_Animation" to="." method="_on_sprite_animation_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Noise Interaction" to="." method="_on_noise_interaction_area_entered"]
 [connection signal="body_entered" from="Noise Interaction" to="Noise Interaction" method="_on_body_entered"]
+[connection signal="body_entered" from="Acid Detector" to="." method="_on_acid_detector_body_entered"]

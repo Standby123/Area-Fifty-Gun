@@ -5,6 +5,7 @@ extends Area2D
 var glass_num: int = 1
 var metal_num: int = 1
 
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Glass"):
 		var glass: String = "Glass" + str(glass_num)
