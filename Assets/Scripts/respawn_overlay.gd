@@ -9,9 +9,10 @@ func _ready() -> void:
 var count: int = 0
 func _process(delta: float) -> void:
 	if not IsAlive.alive and count == 0:
+		IsAlive.death_noise()
 		visible = true
 		animation_player.play("Respawn Text")
-		get_tree().paused = true
+		#get_tree().paused = true
 		count += 1
 
 
