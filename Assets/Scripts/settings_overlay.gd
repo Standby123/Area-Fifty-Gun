@@ -17,15 +17,18 @@ func _input(event):
 			visible = true
 			animation_player.play("Write Text")
 			get_tree().paused = true
-			
-
-
 
 func _on_level_reset_pressed() -> void:
-	get_tree().change_scene_to_file.call_deferred(get_tree().current_scene.scene_file_path)
+	#var reset_scene_path = get_tree().current_scene.scene_file_path
+	#print(reset_scene_path)
+	#get_tree().current_scene.queue_free()
+	#await get_tree().current_scene.tree_exited
+	#get_tree().change_scene_to_file.call_deferred(reset_scene_path)
+	
 	visible = false
 	animation_player.stop()
 	get_tree().paused = false
+	get_tree().reload_current_scene()
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file.call_deferred("res://Assets/Scenes/UI Elements/Main Menu.tscn")

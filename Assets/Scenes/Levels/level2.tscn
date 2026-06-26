@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="3_ived2"]
 [ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="3_q1t0u"]
 [ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="4_q1t0u"]
+[ext_resource type="PackedScene" uid="uid://ddqrnckkc62th" path="res://Assets/Scenes/light.tscn" id="5_hwe52"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8c8ah"]
 resource_local_to_scene = true
@@ -31,5 +32,18 @@ shape = SubResource("RectangleShape2D_8c8ah")
 
 [node name="Camera" parent="." unique_id=1696142273 instance=ExtResource("3_ived2")]
 position = Vector2(24, 3)
+
+[node name="Light" parent="." unique_id=1389100412 instance=ExtResource("5_hwe52")]
+position = Vector2(98, -119)
+energy = 5.0
+
+[node name="Light2" parent="." unique_id=1306281104 instance=ExtResource("5_hwe52")]
+position = Vector2(261, -120)
+energy = 3.0
+
+[node name="Light3" parent="." unique_id=1221484279 instance=ExtResource("5_hwe52")]
+position = Vector2(-146, -120)
+can_break = true
+time_to_break = 6.0
 
 [editable path="Level End Area"]
