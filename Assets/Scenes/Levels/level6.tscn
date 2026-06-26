@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="2_5xax3"]
 [ext_resource type="PackedScene" uid="uid://c4f7fhfteoaj0" path="res://Assets/Scenes/player_handler.tscn" id="3_8v8a2"]
 [ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="4_ow27p"]
-[ext_resource type="PackedScene" uid="uid://de7f4eq7lqa85" path="res://Assets/Scenes/Interactable Objects/Laser Cannon.tscn" id="5_6l7de"]
+[ext_resource type="PackedScene" uid="uid://cmih5s5lj3lkr" path="res://Assets/Scenes/Interactable Objects/Laser Cannon.tscn" id="5_6l7de"]
 [ext_resource type="PackedScene" uid="uid://m7t8b3uvasvy" path="res://Assets/Scenes/Interactable Objects/breakable_walls.tscn" id="5_nv1jn"]
 [ext_resource type="PackedScene" uid="uid://cnokvmknckpa6" path="res://Assets/Scenes/Interactable Objects/death_spinner.tscn" id="6_8v8a2"]
 
