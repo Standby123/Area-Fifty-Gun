@@ -46,17 +46,20 @@ func _physics_process(delta: float) -> void:
 			
 			# Power Down
 			reverse_charge = true
+			if null_tree(): return	
 			await get_tree().create_timer(1, true, true).timeout
 			reverse_charge = false
 			
 			# Power Off
 			power_off = true
+			if null_tree(): return
 			await get_tree().create_timer(sleep_time, true, true).timeout
 			power_off = false
 			#sleep_timer.stop()
 			
 			# Power On
 			charge = true
+			
 			await  get_tree().create_timer(1, true, true).timeout
 			charge = false
 			
@@ -66,6 +69,9 @@ func _physics_process(delta: float) -> void:
 			elapsed_time = 0.0
 			
 		elapsed_time += delta
+		
+func null_tree() -> bool:
+	return !is_inside_tree()
 		
 func main_thread(delta):
 	target_position.x = move_toward(
