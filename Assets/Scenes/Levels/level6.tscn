@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bbisn5uj7wahe"]
 
 [ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="1_nv1jn"]
+[ext_resource type="PackedScene" uid="uid://beky7crsn5k40" path="res://Assets/Sprites/Backgrounds/cinderblock_bg_6.tscn" id="1_ow27p"]
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="2_5xax3"]
 [ext_resource type="PackedScene" uid="uid://c4f7fhfteoaj0" path="res://Assets/Scenes/player_handler.tscn" id="3_8v8a2"]
 [ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="4_ow27p"]
@@ -8,11 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://m7t8b3uvasvy" path="res://Assets/Scenes/Interactable Objects/breakable_walls.tscn" id="5_nv1jn"]
 [ext_resource type="PackedScene" uid="uid://cnokvmknckpa6" path="res://Assets/Scenes/Interactable Objects/death_spinner.tscn" id="6_8v8a2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8v8a2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l7de"]
 resource_local_to_scene = true
 size = Vector2(135, 72)
 
 [node name="Main4" type="Node2D" unique_id=744974072]
+
+[node name="CinderblockBg6" parent="." unique_id=2101184849 instance=ExtResource("1_ow27p")]
+position = Vector2(19, 8)
 
 [node name="Floor and Walls" parent="." unique_id=1075090486 instance=ExtResource("1_nv1jn")]
 z_index = 1
@@ -31,7 +35,7 @@ scale = Vector2(2.0085683, 2.2426603)
 
 [node name="CollisionShape2D" parent="Level End Area" index="0" unique_id=176094685]
 position = Vector2(-273.5, -96)
-shape = SubResource("RectangleShape2D_8v8a2")
+shape = SubResource("RectangleShape2D_6l7de")
 
 [node name="Glass Handler" type="Node" parent="." unique_id=1690368958]
 

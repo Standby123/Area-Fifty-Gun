@@ -1,16 +1,20 @@
 [gd_scene format=4 uid="uid://pkap2mvkrttw"]
 
 [ext_resource type="PackedScene" uid="uid://cnokvmknckpa6" path="res://Assets/Scenes/Interactable Objects/death_spinner.tscn" id="1_i4y1f"]
+[ext_resource type="PackedScene" uid="uid://dho5c7ca58x1f" path="res://Assets/Sprites/Backgrounds/cinderblock_bg_3.tscn" id="1_tuvsu"]
 [ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="1_xcfux"]
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="2_i4y1f"]
 [ext_resource type="PackedScene" uid="uid://c4f7fhfteoaj0" path="res://Assets/Scenes/player_handler.tscn" id="3_tuvsu"]
 [ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="4_c1uat"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4y1f"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1uat"]
 resource_local_to_scene = true
 size = Vector2(135, 72)
 
 [node name="Main4" type="Node2D" unique_id=744974072]
+
+[node name="CinderblockBg3" parent="." unique_id=1311855829 instance=ExtResource("1_tuvsu")]
+position = Vector2(14, -3)
 
 [node name="Death Blade Handler" type="Node" parent="." unique_id=1655703630]
 
@@ -171,7 +175,7 @@ scale = Vector2(1, 1.6800019)
 
 [node name="CollisionShape2D" parent="Level End Area" index="0" unique_id=176094685]
 position = Vector2(-273.5, -96)
-shape = SubResource("RectangleShape2D_i4y1f")
+shape = SubResource("RectangleShape2D_c1uat")
 
 [node name="Camera" parent="." unique_id=1696142273 instance=ExtResource("2_i4y1f")]
 position = Vector2(24, 3)

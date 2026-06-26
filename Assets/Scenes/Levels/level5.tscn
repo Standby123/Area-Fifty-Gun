@@ -1,16 +1,20 @@
 [gd_scene format=4 uid="uid://fn6wq45s5gec"]
 
 [ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="1_6ai57"]
+[ext_resource type="PackedScene" uid="uid://7xor75egyqls" path="res://Assets/Sprites/Backgrounds/cinderblock_bg_5.tscn" id="1_q8hay"]
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="2_q8hay"]
 [ext_resource type="PackedScene" uid="uid://c4f7fhfteoaj0" path="res://Assets/Scenes/player_handler.tscn" id="3_s58km"]
 [ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="4_5qovf"]
-[ext_resource type="PackedScene" uid="uid://de7f4eq7lqa85" path="res://Assets/Scenes/Interactable Objects/Laser Cannon.tscn" id="5_6ai57"]
+[ext_resource type="PackedScene" uid="uid://cmih5s5lj3lkr" path="res://Assets/Scenes/Interactable Objects/Laser Cannon.tscn" id="5_6ai57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ai57"]
 resource_local_to_scene = true
 size = Vector2(135, 72)
 
 [node name="Main4" type="Node2D" unique_id=744974072]
+
+[node name="CinderblockBg5" parent="." unique_id=624053420 instance=ExtResource("1_q8hay")]
+position = Vector2(96, -34)
 
 [node name="Floor and Walls" parent="." unique_id=1075090486 instance=ExtResource("1_6ai57")]
 z_index = 1
