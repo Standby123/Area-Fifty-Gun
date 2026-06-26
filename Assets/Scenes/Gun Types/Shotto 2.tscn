@@ -618,6 +618,7 @@ rotation = -1.5707964
 target_position = Vector2(-9.536743e-07, 15)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2109974461]
+visible = false
 position = Vector2(37, -2.0000002)
 scale = Vector2(2.9, 1)
 texture = ExtResource("4_iyvks")
