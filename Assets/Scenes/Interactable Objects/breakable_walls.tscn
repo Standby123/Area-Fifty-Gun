@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://m7t8b3uvasvy"]
 
 [ext_resource type="Texture2D" uid="uid://dbgm2uab767cc" path="res://Assets/Sprites/glass_square.png" id="1_ecx16"]
-[ext_resource type="Script" uid="uid://2kucrwbci15o" path="res://Assets/Scripts/breakable_walls.gd" id="2_a8d2x"]
-[ext_resource type="PackedScene" uid="uid://dqsw1602spgg7" path="res://Assets/Scenes/ShardEmitter.tscn" id="3_y60u0"]
+[ext_resource type="Script" path="res://Assets/Scripts/breakable_walls.gd" id="2_a8d2x"]
+[ext_resource type="PackedScene" path="res://Assets/Scenes/ShardEmitter.tscn" id="3_y60u0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vl6a"]
 resource_local_to_scene = true
@@ -25,7 +25,7 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_0vl6a")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1454760533]
-collision_layer = 16
+collision_layer = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=314182929]
 shape = SubResource("RectangleShape2D_0vl6a")
