@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bvmiaeomvoq1o"]
+
+[ext_resource type="Texture2D" uid="uid://jiyauhabccvg" path="res://Assets/Sprites/Animtion Frames/acid_goo_anim.png" id="1_joy0m"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_joy0m"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_joy0m"]
+texture = ExtResource("1_joy0m")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_columns = 8
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -10.196184, 16, -9.558922, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_slcso"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 64
+physics_layer_0/collision_mask = 0
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_joy0m")
+sources/3 = SubResource("TileSetAtlasSource_joy0m")
+
+[node name="Acid" type="TileMapLayer" unique_id=1516851018 groups=["Acid"]]
+tile_set = SubResource("TileSet_slcso")
