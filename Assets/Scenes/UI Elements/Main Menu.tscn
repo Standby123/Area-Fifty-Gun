@@ -81,7 +81,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_fshme"]
 resource_name = "Main Text Appearance"
-length = 2.8
+length = 5.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
