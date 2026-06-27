@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://de7f4eq7lqa85" path="res://Assets/Scenes/Interactable Objects/Laser Cannon.tscn" id="5_1nl4h"]
 [ext_resource type="PackedScene" uid="uid://m7t8b3uvasvy" path="res://Assets/Scenes/Interactable Objects/breakable_walls.tscn" id="6_cvsns"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g01wb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcg41"]
 resource_local_to_scene = true
 size = Vector2(135, 72)
 
@@ -33,7 +33,7 @@ scale = Vector2(2.0085683, 2.2426603)
 
 [node name="CollisionShape2D" parent="Level End Area" index="0" unique_id=176094685]
 position = Vector2(-67.70993, -198.42505)
-shape = SubResource("RectangleShape2D_g01wb")
+shape = SubResource("RectangleShape2D_pcg41")
 
 [node name="BreakableWalls" parent="." unique_id=62945943 instance=ExtResource("6_cvsns")]
 position = Vector2(0, 77)
@@ -46,14 +46,14 @@ colour = Color(0.7978301, 2.6471912e-06, 1.1551381e-06, 1)
 Sweep = false
 Indefinite_Time = false
 Active_Time = 5.0
-Inactive_Time = 7.0
+Inactive_Time = 8.0
 
 [node name="Ceiling Mount2" parent="." unique_id=1925659857 instance=ExtResource("5_1nl4h")]
 position = Vector2(-280, 18)
 rotation = -1.5707964
 colour = Color(0.7704319, 0.783854, 0.24659547, 1)
-Low_Angle = 30
-High_Angle = -32
+Low_Angle = 32
+High_Angle = -40
 Duration = 10
 Active_Time = 5.0
 Inactive_Time = 7.0
@@ -64,6 +64,7 @@ rotation = -1.5707964
 scale = Vector2(-1, -1)
 colour = Color(0.7704319, 0.783854, 0.24659547, 1)
 Low_Angle = -32
+High_Angle = 40
 Duration = 10
 Active_Time = 5.0
 Inactive_Time = 7.0

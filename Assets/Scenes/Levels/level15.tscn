@@ -4,7 +4,11 @@
 [ext_resource type="FontFile" uid="uid://dvu4ovbpd6tb0" path="res://Assets/Fonts/BoldsPixels.ttf" id="4_5tggk"]
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="4_woga3"]
 [ext_resource type="PackedScene" uid="uid://c4f7fhfteoaj0" path="res://Assets/Scenes/player_handler.tscn" id="5_b7vlp"]
+[ext_resource type="Texture2D" uid="uid://cacjjgsjshdb3" path="res://Assets/Sprites/Ase_and_unfinished/Temp_background.png" id="6_mi4tk"]
 [ext_resource type="PackedScene" uid="uid://de7f4eq7lqa85" path="res://Assets/Scenes/Interactable Objects/Laser Cannon.tscn" id="7_8xqhs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3e43"]
+texture = ExtResource("6_mi4tk")
 
 [sub_resource type="Animation" id="Animation_7omuy"]
 length = 0.001
@@ -108,6 +112,14 @@ _data = {
 }
 
 [node name="Main4" type="Node2D" unique_id=744974072]
+
+[node name="Background" type="Panel" parent="." unique_id=1723030749]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_r3e43")
 
 [node name="Floor and Walls" parent="." unique_id=1075090486 instance=ExtResource("3_8uvlg")]
 z_index = 1
