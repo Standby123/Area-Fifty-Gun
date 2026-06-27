@@ -69,7 +69,6 @@ Menu={
 2d_physics/layer_4="Level Changer"
 2d_physics/layer_5="Breakable"
 2d_physics/layer_6="Shards"
-2d_physics/layer_7="Acid"
 
 [physics]
 
