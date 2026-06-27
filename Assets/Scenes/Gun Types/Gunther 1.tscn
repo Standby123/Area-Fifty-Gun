@@ -590,6 +590,11 @@ mass = 0.04
 gravity_scale = 0.6
 script = ExtResource("1_u1yyb")
 
+[node name="BulletTimer" type="Timer" parent="." unique_id=1353273835]
+wait_time = 2.0
+one_shot = true
+ignore_time_scale = true
+
 [node name="Collider" type="CollisionPolygon2D" parent="." unique_id=1687368870]
 polygon = PackedVector2Array(-14, 12, -14, -7, 14, -7, 14, -2, -7, -2, -7, 13, -13, 13)
 
@@ -691,6 +696,7 @@ collision_mask = 64
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_hvc77")
 
+[connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]
 [connection signal="animation_finished" from="Sprite_Animation" to="." method="_on_sprite_animation_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Noise Interaction" to="." method="_on_noise_interaction_area_entered"]

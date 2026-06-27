@@ -101,6 +101,7 @@ autoplay = &"intro_cutscene"
 
 [node name="CutsceneMusic" type="AudioStreamPlayer2D" parent="." unique_id=837635034]
 stream = ExtResource("5_iap54")
+volume_db = 10.722
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=336953255]
 zoom = Vector2(7.2, 7.2)

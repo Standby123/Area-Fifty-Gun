@@ -4,6 +4,8 @@ var shot_allowed : bool = true
 var recoil : int = 20
 signal shot_fired
 var shoot_anim_ended : bool = true
+var bullet_time : bool = false
+var bullet_time_used = false
 
 @onready var _animated_sprite = $Sprite_Animation
 @onready var sprite_animation: AnimatedSprite2D = $Sprite_Animation
@@ -11,6 +13,8 @@ var shoot_anim_ended : bool = true
 @onready var collider: CollisionPolygon2D = $Collider
 
 @onready var muzzle: Node2D = $Muzzle
+@onready var BulletTimer: Timer = $BulletTimer
+
 
 # Bullet and Entity
 const BULLET = preload("res://Assets/Scenes/Bullets/bullet.tscn")
@@ -42,8 +46,26 @@ func _physics_process(delta: float) -> void:
 			
 		if Input.is_action_pressed("Rotate Right"):
 			angular_velocity = 6
-		
-				
+			
+		if Input.is_action_pressed("Bullet Time") and bullet_time_used == false:
+			bullet_time_used = true
+			bullet_time = true
+			BulletTimer.start()
+		if bullet_time == true:
+			Engine.time_scale = 0.5
+			GameMusic.pitch_scale = 0.5
+			IntroMusic.pitch_scale = 0.5
+			
+			if Input.is_action_pressed("Rotate Left"):
+				angular_velocity = -8
+			
+			if Input.is_action_pressed("Rotate Right"):
+				angular_velocity = 8
+		if bullet_time == false:
+			Engine.time_scale = 1
+			GameMusic.pitch_scale = 1
+			IntroMusic.pitch_scale = 1
+
 		if shot_allowed == true and not animation_player.is_playing():
 			
 			if Input.is_action_just_pressed("Shoot"):
@@ -101,3 +123,7 @@ func death():
 
 func _on_acid_detector_body_entered(body: Node2D) -> void:
 	death()
+
+
+func _on_bullet_timer_timeout() -> void:
+	bullet_time = false # Replace with function body.
