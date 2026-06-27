@@ -59,7 +59,7 @@ func _physics_process(delta: float) -> void:
 			
  			# Power On
 			charge = true
-			
+			if null_tree(): return
 			await  get_tree().create_timer(1, true, true).timeout
 			charge = false
 			
