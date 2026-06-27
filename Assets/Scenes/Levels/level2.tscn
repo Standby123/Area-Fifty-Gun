@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c655ago1upvy6" path="res://Assets/Sprites/Backgrounds/cinderblock_bg_1.tscn" id="1_tyjm4"]
 [ext_resource type="FontFile" uid="uid://c72ql7kjnvo40" path="res://Assets/Fonts/BlockCraft.otf" id="2_6piq8"]
-[ext_resource type="Script" path="res://Assets/Scripts/tutorial_box1.gd" id="3_a044u"]
+[ext_resource type="Script" uid="uid://cgk54gw26tccp" path="res://Assets/Scripts/tutorial_box1.gd" id="3_a044u"]
 [ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="4_r6xd3"]
 [ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="5_8pi1m"]
 [ext_resource type="PackedScene" uid="uid://bnl2snl43hpin" path="res://Assets/Scenes/camera.tscn" id="6_f3vn8"]
@@ -57,7 +57,7 @@ position = Vector2(-365.5, -77.5)
 shape = SubResource("RectangleShape2D_tyjm4")
 
 [node name="Camera" parent="." unique_id=1696142273 instance=ExtResource("6_f3vn8")]
-position = Vector2(0, 26)
+position = Vector2(-10, 26)
 
 [node name="Player Handler" parent="." unique_id=551140747 instance=ExtResource("7_5kip7")]
 position = Vector2(233, 141)

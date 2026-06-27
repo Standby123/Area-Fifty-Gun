@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://km8mt26palfb"]
+[gd_scene format=4 uid="uid://wn8lnj5s08tp"]
 
 [ext_resource type="PackedScene" uid="uid://c655ago1upvy6" path="res://Assets/Sprites/Backgrounds/cinderblock_bg_1.tscn" id="1_81xjb"]
 [ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="3_81xjb"]
@@ -19,7 +19,7 @@ shadow_color = Color(0.23753911, 0.23753914, 0.23753911, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmk30"]
 size = Vector2(332, 257)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lujl0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqagj"]
 resource_local_to_scene = true
 size = Vector2(91, 109)
 
@@ -69,10 +69,10 @@ tile_map_data = PackedByteArray("AAD2/wUAAQABAAIAAAD3/wUAAQABAAIAAAD4/wUAAQABAAI
 
 [node name="CollisionShape2D" parent="Level End Area" index="0" unique_id=176094685]
 position = Vector2(-365.5, -77.5)
-shape = SubResource("RectangleShape2D_lujl0")
+shape = SubResource("RectangleShape2D_oqagj")
 
 [node name="Camera" parent="." unique_id=1696142273 instance=ExtResource("4_5e7qr")]
-position = Vector2(0, 26)
+position = Vector2(-7, 26)
 
 [node name="Player Handler" parent="." unique_id=551140747 instance=ExtResource("4_81xjb")]
 position = Vector2(241, 22)

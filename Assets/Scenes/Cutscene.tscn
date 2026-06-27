@@ -103,7 +103,8 @@ autoplay = &"intro_cutscene"
 stream = ExtResource("5_iap54")
 volume_db = 10.722
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=336953255]
-zoom = Vector2(7.2, 7.2)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1133825041]
+ignore_rotation = false
+zoom = Vector2(8, 8)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

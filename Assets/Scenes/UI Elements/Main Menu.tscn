@@ -348,8 +348,9 @@ position = Vector2(1060, 33)
 [node name="Light8" parent="Light Handler" unique_id=104778750 instance=ExtResource("8_r6ogh")]
 position = Vector2(1088, 33)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=307555126]
-position = Vector2(576, 324)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=982016490]
+position = Vector2(641, 360)
+ignore_rotation = false
 
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="New Game" to="." method="_on_new_game_pressed"]

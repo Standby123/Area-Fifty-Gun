@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="4_ow27p"]
 [ext_resource type="PackedScene" uid="uid://de7f4eq7lqa85" path="res://Assets/Scenes/Interactable Objects/Laser Cannon.tscn" id="5_6l7de"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8hay"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xax3"]
 resource_local_to_scene = true
 size = Vector2(135, 72)
 
@@ -29,7 +29,7 @@ scale = Vector2(2.0085683, 2.2426603)
 
 [node name="CollisionShape2D" parent="Level End Area" index="0" unique_id=176094685]
 position = Vector2(-273.5, -96)
-shape = SubResource("RectangleShape2D_q8hay")
+shape = SubResource("RectangleShape2D_5xax3")
 
 [node name="Laser Cannons" type="Node" parent="." unique_id=457599972]
 
@@ -51,6 +51,6 @@ Active_Time = 2.3
 Inactive_Time = 4.0
 
 [node name="Camera" parent="Laser Cannons" unique_id=1696142273 instance=ExtResource("2_5xax3")]
-position = Vector2(24, 3)
+position = Vector2(24, 18)
 
 [editable path="Level End Area"]

@@ -7,23 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://cnchikxh2e1eq" path="res://Assets/Scenes/Interactable Objects/level_end_area.tscn" id="4_5qovf"]
 [ext_resource type="PackedScene" uid="uid://m7t8b3uvasvy" path="res://Assets/Scenes/Interactable Objects/breakable_walls.tscn" id="6_s58km"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmalu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8hay"]
 resource_local_to_scene = true
 size = Vector2(135, 72)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nm3f5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s58km"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxxxi"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qovf"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0llub"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80136"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qo04m"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpcqk"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
@@ -45,10 +45,10 @@ scale = Vector2(2.0085683, 2.2426603)
 
 [node name="CollisionShape2D" parent="Level End Area" index="0" unique_id=176094685]
 position = Vector2(-273.5, -96)
-shape = SubResource("RectangleShape2D_kmalu")
+shape = SubResource("RectangleShape2D_q8hay")
 
 [node name="Camera" parent="." unique_id=1696142273 instance=ExtResource("2_q8hay")]
-position = Vector2(24, 3)
+position = Vector2(24, 16)
 
 [node name="BreakableWalls" parent="." unique_id=62945943 instance=ExtResource("6_s58km")]
 position = Vector2(0, -3)
@@ -58,10 +58,10 @@ position = Vector2(1.5, 7.5)
 scale = Vector2(4.84375, 0.53125)
 
 [node name="CollisionShape2D" parent="BreakableWalls/Sprite2D/Area2D" parent_id_path=PackedInt32Array(62945943, 1556567046) index="0" unique_id=1615889048]
-shape = SubResource("RectangleShape2D_nm3f5")
+shape = SubResource("RectangleShape2D_s58km")
 
 [node name="CollisionShape2D" parent="BreakableWalls/Sprite2D/StaticBody2D" parent_id_path=PackedInt32Array(62945943, 1454760533) index="0" unique_id=314182929]
-shape = SubResource("RectangleShape2D_nm3f5")
+shape = SubResource("RectangleShape2D_s58km")
 
 [node name="BreakableWalls2" parent="." unique_id=1275574501 instance=ExtResource("6_s58km")]
 position = Vector2(0, -47)
@@ -71,10 +71,10 @@ position = Vector2(1.5, 7.5)
 scale = Vector2(4.84375, 0.53125)
 
 [node name="CollisionShape2D" parent="BreakableWalls2/Sprite2D/Area2D" parent_id_path=PackedInt32Array(1275574501, 1556567046) index="0" unique_id=1615889048]
-shape = SubResource("RectangleShape2D_xxxxi")
+shape = SubResource("RectangleShape2D_5qovf")
 
 [node name="CollisionShape2D" parent="BreakableWalls2/Sprite2D/StaticBody2D" parent_id_path=PackedInt32Array(1275574501, 1454760533) index="0" unique_id=314182929]
-shape = SubResource("RectangleShape2D_xxxxi")
+shape = SubResource("RectangleShape2D_5qovf")
 
 [node name="BreakableWalls3" parent="." unique_id=1640379236 instance=ExtResource("6_s58km")]
 position = Vector2(0, -87)
@@ -84,10 +84,10 @@ position = Vector2(1.5, 7.5)
 scale = Vector2(4.84375, 0.53125)
 
 [node name="CollisionShape2D" parent="BreakableWalls3/Sprite2D/Area2D" parent_id_path=PackedInt32Array(1640379236, 1556567046) index="0" unique_id=1615889048]
-shape = SubResource("RectangleShape2D_0llub")
+shape = SubResource("RectangleShape2D_80136")
 
 [node name="CollisionShape2D" parent="BreakableWalls3/Sprite2D/StaticBody2D" parent_id_path=PackedInt32Array(1640379236, 1454760533) index="0" unique_id=314182929]
-shape = SubResource("RectangleShape2D_0llub")
+shape = SubResource("RectangleShape2D_80136")
 
 [node name="BreakableWalls4" parent="." unique_id=2131208758 instance=ExtResource("6_s58km")]
 position = Vector2(0, -129)
@@ -97,10 +97,10 @@ position = Vector2(1.5, 7.5)
 scale = Vector2(4.84375, 0.53125)
 
 [node name="CollisionShape2D" parent="BreakableWalls4/Sprite2D/Area2D" parent_id_path=PackedInt32Array(2131208758, 1556567046) index="0" unique_id=1615889048]
-shape = SubResource("RectangleShape2D_qo04m")
+shape = SubResource("RectangleShape2D_dpcqk")
 
 [node name="CollisionShape2D" parent="BreakableWalls4/Sprite2D/StaticBody2D" parent_id_path=PackedInt32Array(2131208758, 1454760533) index="0" unique_id=314182929]
-shape = SubResource("RectangleShape2D_qo04m")
+shape = SubResource("RectangleShape2D_dpcqk")
 
 [editable path="Level End Area"]
 [editable path="BreakableWalls"]
