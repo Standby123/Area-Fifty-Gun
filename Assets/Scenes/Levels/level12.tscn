@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b22kppfe2r6gu"]
+[gd_scene format=4 uid="uid://bassuiussqhk4"]
 
 [ext_resource type="PackedScene" uid="uid://7xor75egyqls" path="res://Assets/Sprites/Backgrounds/cinderblock_bg_5.tscn" id="1_1n4j2"]
 [ext_resource type="PackedScene" uid="uid://de1vdo5fygw7o" path="res://Assets/Scenes/floor_and_walls.tscn" id="2_vh0mh"]
