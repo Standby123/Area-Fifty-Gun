@@ -26,6 +26,12 @@ IsAlive="*uid://co6sooh28rqg0"
 IntroMusic="*uid://sly2moo4ymno"
 GameMusic="*uid://by80cwgh1457e"
 
+[display]
+
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [global_group]
 
 Player=""

@@ -183,6 +183,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_pddk7")
+metadata/_edit_use_anchors_ = true
 
 [node name="Gunther" type="Panel" parent="." unique_id=527269659]
 layout_mode = 0
@@ -193,6 +194,7 @@ offset_bottom = 268.0
 rotation = 0.0763769
 scale = Vector2(5, 5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_165qh")
+metadata/_edit_use_anchors_ = true
 
 [node name="Shotto" type="Panel" parent="." unique_id=1287623972]
 layout_mode = 0
@@ -203,6 +205,7 @@ offset_bottom = 350.0
 rotation = 0.19337828
 scale = Vector2(-10, 5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_y0swl")
+metadata/_edit_use_anchors_ = true
 
 [node name="Settings" type="Button" parent="." unique_id=1720512175]
 layout_mode = 0
@@ -219,6 +222,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_olk6w")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_igs57")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8sfg1")
 text = "Settings"
+metadata/_edit_use_anchors_ = true
 
 [node name="New Game" type="Button" parent="." unique_id=929736122]
 layout_mode = 0
@@ -235,6 +239,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_olk6w")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_igs57")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8sfg1")
 text = "New Game"
+metadata/_edit_use_anchors_ = true
 
 [node name="Splash Text" type="Label" parent="." unique_id=2047534310]
 layout_mode = 0
@@ -249,6 +254,7 @@ text = "There ain't enough rounds  in this town for the two of us..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Splash Text" unique_id=1672629647]
 libraries/ = SubResource("AnimationLibrary_fshme")
@@ -272,6 +278,7 @@ theme_override_fonts/font = ExtResource("6_cd8vj")
 theme_override_font_sizes/font_size = 120
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Text Appearance" type="AnimationPlayer" parent="Main Text" unique_id=706928720]
 root_node = NodePath("../..")
